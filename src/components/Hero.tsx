@@ -43,7 +43,7 @@ export default function Hero() {
             
             <div className="flex flex-col items-center md:items-start gap-4 animate-fade-in-delayed">
               <a
-                href="Documents/CV_AAMD_Stage_ING_Data.pdf"
+                href={process.env.PUBLIC_URL + "/Documents/CV_AAMD_Stage_ING_Data.pdf"}
                 download
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium py-2 px-4 rounded-lg hover:opacity-90 transition-opacity"
               >
