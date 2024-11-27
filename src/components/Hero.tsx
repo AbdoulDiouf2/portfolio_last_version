@@ -22,7 +22,7 @@ export default function Hero() {
           <div className="w-full md:w-1/3 mb-8 md:mb-0">
             <div className="w-full h-auto max-h-[300px] md:max-h-[600px] overflow-hidden shadow-lg">
               <img
-                src="Images/profil_abdoul.jpg"
+                src={process.env.PUBLIC_URL + "/Images/profil_abdoul.jpg"}
                 alt="Abdoul Ahad Mbacké Diouf"
                 className="w-full h-full object-cover"
               />
