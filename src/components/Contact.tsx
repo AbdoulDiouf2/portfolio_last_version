@@ -129,7 +129,7 @@ export default function Contact() {
               <ContactItem
                 icon={<Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />}
                 title="Téléphone"
-                content="+33 7 53 47 08 48"
+                content="+33 7 49 05 18 79"
                 href="tel:+33753470848"
               />
               

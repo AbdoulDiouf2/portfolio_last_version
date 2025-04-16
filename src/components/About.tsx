@@ -50,7 +50,7 @@ export default function About() {
                 </p>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 mt-1">
                   <li>Français (courant)</li>
-                  <li>Anglais (B2)</li>
+                  <li>Anglais (Certification TOEIC B2)</li>
                 </ul>
               </div>
             </div>
@@ -66,10 +66,16 @@ export default function About() {
           >
             <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Centres d'intérêt</h3>
             <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
-              <li>Data visualisation et amélioration continue</li>
-              <li>Environnement : traitement de l'eau, gestion des déchets</li>
-              <li>Activité personnelle : Scrabble</li>
+              <li><strong>Data & Intelligence Artificielle</strong> : Passionné par l’analyse de données, la modélisation prédictive et le développement d’outils intelligents (ex. : projets avec Prophet, XGBoost, Flask, Looker Studio…).</li>
+              <li><strong>Technologies innovantes</strong> : Intérêt pour les environnements Big Data (Hadoop, Hive, Talend), le cloud (Azure, Docker), et les bases de données (SQL, NoSQL, MongoDB, Neo4j).</li>
+              <li><strong>Développement Web & Interfaces</strong> : Expérience avec HTML, CSS, JavaScript, Bootstrap, et développement de dashboards interactifs.</li>
+              <li><strong>Systèmes d’Information Géographique (SIG)</strong> : Utilisation de logiciels comme ArcGIS dans des projets académiques.</li>
+              <li><strong>Sports collectifs</strong> : Pratique régulière du <em>football entre amis</em>, apprécié pour l'esprit d'équipe et le dynamisme.</li>
+              <li><strong>Jeux de réflexion</strong> : <em>Scrabble</em> en famille, renforçant l’amour des mots, la stratégie et la convivialité.</li>
+              <li><strong>Création de projets</strong> : Participation à des hackathons (ex. : Med’ING Hack), aime résoudre des problématiques concrètes à travers la technologie.</li>
+              <li><strong>Technologies Open Source & Collaboratives</strong> : Actif sur GitHub, utilise Git, Trello, Docker, etc.</li>
             </ul>
+
           </motion.div>
 
           {/* Formation */}
@@ -89,10 +95,15 @@ export default function About() {
                 </span>
                 <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">ESIGELEC - Rouen, France</h4>
                 <time className="block mb-2 text-sm font-normal leading-none text-gray-600 dark:text-gray-400">2022 - 2025</time>
-                <p className="text-base font-normal text-gray-600 dark:text-gray-300">Diplôme : Ingénieur Big Data pour la Transformation Numérique</p>
+                <p className="text-base font-normal text-gray-600 dark:text-gray-300"><strong>Diplôme BAC+5</strong> : Ingénieur Big Data pour la Transformation Numérique</p>
                 <p className="text-base font-normal text-gray-600 dark:text-gray-300">
-                  <span className="font-medium">Compétences acquises :</span> SQL, Talend, PL/SQL, Power BI, Python, 
-                  Hadoop, Hive, HiveQL, R, Modélisation décisionnelle, SIG, Cloud Azure, d3.js, C#
+                  <span className="font-medium">Compétences acquises :</span>
+                  <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
+                    <li>C# et Cloud Azure</li>
+                    <li>Gestion de projet Data</li>
+                    <li>SQL, Talend, PL/SQL, Power BI, Modélisation décisionnel</li>
+                    <li>SIG (ArcGIS), d3.js, Python, R, Hadoop, Hive, HiveQL, Pig, projet de création d'univers</li>
+                  </ul>
                 </p>
               </div>
 
@@ -102,9 +113,14 @@ export default function About() {
                 </span>
                 <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">ESMT - Dakar, Sénégal</h4>
                 <time className="block mb-2 text-sm font-normal leading-none text-gray-600 dark:text-gray-400">2020 - 2022</time>
-                <p className="text-base font-normal text-gray-600 dark:text-gray-300">Classes Préparatoires Scientifiques (CPS)</p>
+                <p className="text-base font-normal text-gray-600 dark:text-gray-300"><strong>Formation BAC+2</strong> : Classes Préparatoires Scientifiques (CPS)</p>
                 <p className="text-base font-normal text-gray-600 dark:text-gray-300">
-                  Mathématiques, Physique, Sciences de l'Ingénieur
+                  <span className="font-medium">Compétences acquises :</span>
+                  <ul className="list-disc list-inside mt-2 ml-4 space-y-1">
+                    <li>Mathématiques</li>
+                    <li>Physique</li>
+                    <li>Sciences de l'Ingénieur</li>
+                  </ul>
                 </p>
               </div>
 
@@ -112,9 +128,9 @@ export default function About() {
                 <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -left-3 ring-8 ring-white dark:ring-gray-800">
                   <GraduationCap className="w-3 h-3 text-white" />
                 </span>
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Université Cheikh Anta Diop - Dakar, Sénégal</h4>
-                <time className="block mb-2 text-sm font-normal leading-none text-gray-600 dark:text-gray-400">2018 - 2020</time>
-                <p className="text-base font-normal text-gray-600 dark:text-gray-300">Licence en Sciences et Technologies</p>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Lycée d'Excellence Privé Birago DIOP - Dakar, Sénégal</h4>
+                <time className="block mb-2 text-sm font-normal leading-none text-gray-600 dark:text-gray-400">2019 - 2020</time>
+                <p className="text-base font-normal text-gray-600 dark:text-gray-300"><strong>Baccalauréat</strong> : Licence en Sciences et Technologies (S2)</p>
               </div>
             </div>
           </motion.div>

@@ -6,7 +6,7 @@ interface ModalProps {
   onClose: () => void;
   title: string;
   children: React.ReactNode;
-  illustration: string; // URL of the illustration image, now mandatory
+  illustration?: string; // URL of the illustration image, now optional
 }
 
 export default function Modal({ isOpen, onClose, title, children, illustration }: ModalProps) {
@@ -31,9 +31,11 @@ export default function Modal({ isOpen, onClose, title, children, illustration }
             </button>
           </div>
           
-          <div className="mb-4">
-            <img src={illustration} alt="Illustration" className="w-full h-48 object-cover rounded-lg" />
-          </div>
+          {illustration && (
+            <div className="mb-4">
+              <img src={illustration} alt="Illustration" className="w-full h-48 object-cover rounded-lg" />
+            </div>
+          )}
 
           <div className="mt-4 text-gray-700 dark:text-gray-300">
             {children}

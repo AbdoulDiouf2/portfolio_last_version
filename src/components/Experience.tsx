@@ -12,6 +12,7 @@ interface TimelineItem {
   date: string;
   description: string[];
   icon: JSX.Element;
+  illustration?: string; // URL de l'image d'illustration (optionnelle)
 }
 
 export default function Experience() {
@@ -31,7 +32,8 @@ export default function Experience() {
         "Automatisation des calculs KPI pour les prestataires",
         "Création d'outils de visualisation et rapports sur Looker Studio"
       ],
-      icon: <Briefcase className="w-6 h-6" />
+      icon: <Briefcase className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
     },
     {
       id: 2,
@@ -44,23 +46,40 @@ export default function Experience() {
         "Manutention",
         "Gestion logistique"
       ],
-      icon: <Briefcase className="w-6 h-6" />
+      icon: <Briefcase className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
     },
     {
       id: 3,
       type: 'work',
       title: "Stagiaire à la Direction des Opérateurs et des Opérations Internationales (DOI)",
       organization: "Orange Sénégal",
-      date: "Mars 2023 - Avril 2023",
+      date: "Juillet 2022 - Août 2022",
       description: [
         "Assistance à la gestion des opérations internationales",
         "Suivi des indicateurs de performance",
         "Participation à l'élaboration de rapports"
       ],
-      icon: <Briefcase className="w-6 h-6" />
+      icon: <Briefcase className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
     },
     {
       id: 4,
+      type: 'work',
+      title: "Stagiaire à la Direction des Systèmes d'Information (DSI)",
+      organization: "Orange Sénégal",
+      date: "Juillet 2021 - Août 2021",
+      description: [
+        "Configuration de machines",
+        "Activation de BitLocker",
+        " Maintenance et dépannage des machines",
+        "Support bureautique"
+      ],
+      icon: <Briefcase className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+    },
+    {
+      id: 5,
       type: 'project',
       title: "Hackaton Med'ING Hack : Projet MIKANA",
       organization: "ESIGELEC",
@@ -70,10 +89,11 @@ export default function Experience() {
         "Collaboration avec des étudiants et professionnels de divers domaines",
         "Présentation du projet devant un jury de professionnels"
       ],
-      icon: <Award className="w-6 h-6" />
+      icon: <Award className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 5,
+      id: 6,
       type: 'project',
       title: "Conception d'un outil de gestion des absences",
       organization: "ESIGELEC",
@@ -83,29 +103,32 @@ export default function Experience() {
         "Intégration de fonctionnalités de suivi et de reporting",
         "Collaboration avec une équipe de développeurs"
       ],
-      icon: <Code className="w-6 h-6" />
-    },
-    {
-      id: 6,
-      type: 'project',
-      title: "Développement d'un site de gestion de jeux de plateau",
-      organization: "",
-      date: "",
-      description: [
-        ""
-      ],
-      icon: <Code className="w-6 h-6" />
+      icon: <Code className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
     },
     {
       id: 7,
-      type: 'education',
-      title: "Prévention et Secours Civique de Niveau 1 (PSC1)",
-      organization: "",
-      date: "",
+      type: 'project',
+      title: "Développement d'un site de gestion de jeux de plateau",
+      organization: "ESIGELEC",
+      date: "Septembre 2024 - Décembre 2024",
       description: [
         ""
       ],
-      icon: <Award className="w-6 h-6" />
+      icon: <Code className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+    },
+    {
+      id: 8,
+      type: 'education',
+      title: "Prévention et Secours Civique de Niveau 1 (PSC1)",
+      organization: "Fédération Nationale des Métiers de la Natation et du Sport",
+      date: "03/12/2022",
+      description: [
+        ""
+      ],
+      icon: <Award className="w-6 h-6" />,
+      illustration: "../../public/Images/Certificat_PSC1.jpg"
     }
   ];
 
@@ -121,9 +144,9 @@ export default function Experience() {
 
   const filterButtons = [
     { type: 'all', label: 'Tout' },
-    { type: 'work', label: 'Expériences' },
-    { type: 'education', label: 'Formation' },
-    { type: 'project', label: 'Projets' }
+    { type: 'work', label: 'Expériences Professionnelles' },
+    { type: 'education', label: 'Certifications' },
+    { type: 'project', label: 'Projets Académiques' }
   ];
 
   const filteredItems = timelineItems.filter(
@@ -143,7 +166,7 @@ export default function Experience() {
           {filterButtons.map((button) => (
             <motion.button
               key={button.type}
-              onClick={() => setSelectedType(button.type as any)}
+              onClick={() => setSelectedType(button.type as 'all' | 'work' | 'education' | 'project')}
               className={`px-4 py-2 rounded-full transition-all duration-300 ${
                 selectedType === button.type
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
@@ -216,6 +239,7 @@ export default function Experience() {
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           title={selectedItem !== null ? timelineItems.find(item => item.id === selectedItem)?.title || '' : ''}
+          illustration={selectedItem !== null ? timelineItems.find(item => item.id === selectedItem)?.illustration : undefined}
         >
           {selectedItem !== null && (
             <div className="space-y-4">

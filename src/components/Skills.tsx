@@ -16,13 +16,13 @@ export default function Skills() {
       title: "BI & Data",
       icon: <Database className="w-6 h-6" />,
       category: 'data',
-      skills: ["Power BI", "Looker Studio", "SAP BI 4", "R Studio", "SQL Developer", "Talend", "MySQL", "PL/SQL", "NoSQL"]
+      skills: ["Power BI", "Looker Studio", "SAP BI 4", "R Studio", "SQL Developer", "Talend", "MySQL, PL/SQL", "NoSQL"]
     },
     {
       title: "Développement & DevOps",
       icon: <Wrench className="w-6 h-6" />,
       category: 'devops',
-      skills: ["Docker", "MongoDB", "NEO4J", "GIT", "Visual Studio Code", "Trello (Kanban)"]
+      skills: ["Docker","Docker-Compose","DockerHub","ArcGIS", "MongoDB", "NEO4J", "GIT", "Visual Studio Code", "Trello (Kanban)"]
     },
     {
       title: "Autres outils",
@@ -100,8 +100,8 @@ export default function Skills() {
 
         <div className="mt-12 max-w-4xl mx-auto">
           <div className="bg-white p-6 rounded-xl shadow-lg dark:bg-gray-800 transition-colors duration-300">
-            <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Qualités personnelles</h3>
-            <div className="flex flex-wrap gap-4">
+            <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200 text-center">Qualités personnelles</h3>
+            <div className="flex flex-wrap justify-center gap-4">
               {["Rigueur", "Dynamisme", "Esprit d'équipe", "Capacité d'adaptation", "Intérêt pour l'amélioration continue"].map((quality, index) => (
                 <span
                   key={index}
