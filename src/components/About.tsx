@@ -136,9 +136,9 @@ export default function About() {
                   <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -left-3 ring-8 ring-white dark:ring-gray-800">
                     <GraduationCap className="w-3 h-3 text-white" />
                   </span>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Lycée Privé Birago DIOP - Dakar</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Lycée d'Excellence Privé Birago DIOP - Dakar</h4>
                   <time className="block mb-2 text-sm text-gray-600 dark:text-gray-400">2019 - 2020</time>
-                  <p className="text-base text-gray-600 dark:text-gray-300"><strong>Baccalauréat Scientifique</strong> : Série S2</p>
+                  <p className="text-base text-gray-600 dark:text-gray-300"><strong>Baccalauréat Scientifique</strong> : Série Scientifiques S2</p>
                 </div>
               </div>
             </motion.div>

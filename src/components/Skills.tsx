@@ -2,42 +2,90 @@ import React, { useState } from 'react';
 import { Code, Database, Wrench, Monitor } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Interface pour représenter une compétence avec son niveau
+interface Skill {
+  name: string;
+  level: number; // Sur une échelle de 1 à 5
+}
+
+// Interface pour les catégories de compétences
+interface SkillCategory {
+  title: string;
+  icon: React.ReactNode;
+  category: string;
+  skills: Skill[];
+}
+
 export default function Skills() {
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
-  const skillCategories = [
+  const skillCategories: SkillCategory[] = [
     {
       title: "Langages de programmation",
       icon: <Code className="w-6 h-6" />,
       category: 'programming',
-      skills: ["C", "Java", "Python", "C#", "R", "SQL", "HTML", "CSS", "JavaScript", "Bootstrap"]
+      skills: [
+        { name: "C", level: 3 },
+        { name: "R", level: 2 },
+        { name: "C#", level: 2 },
+        { name: "SQL", level: 4 },
+        { name: "Java", level: 3 },
+        { name: "Python", level: 4 },
+        { name: "JavaScript", level: 2 },
+        { name: "HTML/CSS", level: 2 }
+      ]
     },
     {
       title: "BI & Data",
       icon: <Database className="w-6 h-6" />,
       category: 'data',
-      skills: ["Power BI", "Looker Studio", "SAP BI 4", "R Studio", "SQL Developer", "Talend", "MySQL, PL/SQL", "NoSQL"]
+      skills: [
+        { name: "Talend", level: 2 },
+        { name: "NoSQL", level: 2 },
+        { name: "SAP BI 4", level: 2 },
+        { name: "R Studio", level: 2 },
+        { name: "Power BI", level: 4 },
+        { name: "Looker Studio", level: 3 },
+        { name: "SQL Developer", level: 4 },
+        { name: "MySQL, PL/SQL", level: 4 }
+      ]
     },
     {
       title: "Développement & DevOps",
       icon: <Wrench className="w-6 h-6" />,
       category: 'devops',
-      skills: ["Docker","Docker-Compose","DockerHub","ArcGIS", "MongoDB", "NEO4J", "GIT", "Visual Studio Code", "Trello (Kanban)"]
+      skills: [
+        { name: "GIT", level: 4 },
+        { name: "ArcGIS", level: 2 },
+        { name: "NEO4J", level: 2 },
+        { name: "Docker", level: 4 },
+        { name: "MongoDB", level: 2 },
+        { name: "DockerHub", level: 4 },
+        { name: "Trello (Kanban)", level: 4 },
+        { name: "Docker-Compose", level: 4 },
+        { name: "Visual Studio Code", level: 4 }
+      ]
     },
     {
       title: "Autres outils",
       icon: <Monitor className="w-6 h-6" />,
       category: 'tools',
-      skills: ["Google Workspace", "Jupyter Notebook", "Excel avancé", "Eclipse", "Streamlit"]
+      skills: [
+        { name: "Eclipse", level: 3 },
+        { name: "Streamlit", level: 2 },
+        { name: "Pack Microsoft", level: 4 },
+        { name: "Jupyter Notebook", level: 4 },
+        { name: "Google Workspace", level: 4 }
+      ]
     }
   ];
 
   const filters = [
     { name: 'all', label: 'Tout' },
     { name: 'programming', label: 'Programmation' },
-    { name: 'data', label: 'Data' },
-    { name: 'devops', label: 'DevOps' },
-    { name: 'tools', label: 'Outils' },
+    { name: 'data', label: 'Big Data' },
+    { name: 'devops', label: 'Développement' },
+    { name: 'tools', label: 'Outils Divers' },
   ];
 
   return (
@@ -67,35 +115,46 @@ export default function Skills() {
         </div>
 
         {/* Grille de compétences */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <AnimatePresence mode="wait">
-            {skillCategories
-              .filter(category => activeFilter === 'all' || category.category === activeFilter)
-              .map((category) => (
-                <motion.div
-                  key={category.title}
-                  className="p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800 transition-colors duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="text-blue-600 dark:text-blue-400">
-                      {category.icon}
+        <div className={`${activeFilter !== 'all' ? 'flex justify-center' : ''}`}>
+          <div className={`grid grid-cols-1 ${activeFilter === 'all' ? 'md:grid-cols-2 lg:grid-cols-4' : 'max-w-md'} gap-6`}>
+            <AnimatePresence mode="wait">
+              {skillCategories
+                .filter(category => activeFilter === 'all' || category.category === activeFilter)
+                .map((category) => (
+                  <motion.div
+                    key={category.title}
+                    className="p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800 transition-colors duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="text-blue-600 dark:text-blue-400">
+                        {category.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold ml-2 text-gray-800 dark:text-gray-200">{category.title}</h3>
                     </div>
-                    <h3 className="text-xl font-semibold ml-2 text-gray-800 dark:text-gray-200">{category.title}</h3>
-                  </div>
-                  <ul className="space-y-2">
-                    {category.skills.map((skill) => (
-                      <li key={skill} className="flex items-center">
-                        <span className="ml-2 text-gray-600 dark:text-gray-300">{skill}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-          </AnimatePresence>
+                    <ul className="space-y-3">
+                      {category.skills.map((skill) => (
+                        <li key={skill.name} className="flex flex-col">
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="text-gray-600 dark:text-gray-300">{skill.name}</span>
+                            <span className="text-xs text-gray-500 dark:text-gray-400">{renderSkillLevel(skill.level)}</span>
+                          </div>
+                          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                            <div 
+                              className={`h-2.5 rounded-full ${getSkillLevelColor(skill.level)}`} 
+                              style={{ width: `${skill.level * 20}%` }}
+                            ></div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+            </AnimatePresence>
+          </div>
         </div>
 
         <div className="mt-12 max-w-4xl mx-auto">
@@ -116,4 +175,28 @@ export default function Skills() {
       </div>
     </section>
   );
+}
+
+// Fonction pour afficher le niveau de compétence sous forme textuelle
+function renderSkillLevel(level: number): string {
+  switch (level) {
+    case 1: return "Débutant";
+    case 2: return "Intermédiaire";
+    case 3: return "Avancé";
+    case 4: return "Très avancé";
+    case 5: return "Expert";
+    default: return "";
+  }
+}
+
+// Fonction pour obtenir la couleur de la barre de progression en fonction du niveau
+function getSkillLevelColor(level: number): string {
+  switch (level) {
+    case 1: return "bg-blue-300 dark:bg-blue-900";
+    case 2: return "bg-blue-400 dark:bg-blue-800";
+    case 3: return "bg-blue-500 dark:bg-blue-700";
+    case 4: return "bg-gradient-to-r from-blue-500 to-purple-400";
+    case 5: return "bg-gradient-to-r from-blue-600 to-purple-600";
+    default: return "bg-gray-300";
+  }
 }

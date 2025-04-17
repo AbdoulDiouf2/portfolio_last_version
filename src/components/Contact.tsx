@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Github, Linkedin, MapPin } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import BackgroundAnimation from '../components/BackgroundAnimation'; // Import the BackgroundAnimation component
 
 export default function Contact() {
   const [formData, setFormData] = useState({

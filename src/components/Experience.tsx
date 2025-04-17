@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, Code, Award, Calendar, Building } from 'lucide-react';
+import { Briefcase, Code, Award, Calendar } from 'lucide-react';
 import BackgroundAnimation from './BackgroundAnimation';
 import Modal from './Modal';
 
@@ -28,9 +28,12 @@ export default function Experience() {
       organization: "DALKIA EN",
       date: "08 avril 2024 - 04 octobre 2024",
       description: [
-        "Développement de la GMAO du client",
-        "Automatisation des calculs KPI pour les prestataires",
-        "Création d'outils de visualisation et rapports sur Looker Studio"
+        "- Développement de la Gestion de Maintenance Assistée par Ordinateur (GMAO)",
+        "- Création de rapports sur Looker Studio (Collecte, traitement et analyse des données)",
+        "- Optimisation des scripts d'import de données",
+        "- Mise en place de macros pour automatiser certaines taches de l’équipe pilotage",
+        "- Travail sur la mise à disposition d’un suivi automatique de calcul de performance des prestataires (KPI)",
+        "- Création d’outils de visualisation pour optimiser les méthodes des opérationnels"
       ],
       icon: <Briefcase className="w-6 h-6" />,
       illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
@@ -95,13 +98,11 @@ export default function Experience() {
     {
       id: 6,
       type: 'project',
-      title: "Conception d'un outil de gestion des absences",
+      title: "Approche Métier - Ingénieur R&D",
       organization: "ESIGELEC",
-      date: "Septembre 2023 - Décembre 2023",
+      date: "27 Novembre 2024 - 29 novembre 2024",
       description: [
-        "Développement d'une application web pour la gestion des absences",
-        "Intégration de fonctionnalités de suivi et de reporting",
-        "Collaboration avec une équipe de développeurs"
+        "Développement d'un outil d'analyse vidéo pour l'optimisation de la technique d'aviron"
       ],
       icon: <Code className="w-6 h-6" />,
       illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
@@ -111,7 +112,7 @@ export default function Experience() {
       type: 'project',
       title: "Développement d'un site de gestion de jeux de plateau",
       organization: "ESIGELEC",
-      date: "Septembre 2024 - Décembre 2024",
+      date: "24 novembre 2023 - 01 décembre 2023",
       description: [
         ""
       ],
@@ -120,6 +121,32 @@ export default function Experience() {
     },
     {
       id: 8,
+      type: 'project',
+      title: "Conception d'un outil de gestion des absences",
+      organization: "ESIGELEC",
+      date: "7 mars 2023 - 22 mai 2023",
+      description: [
+        "Développement d'une application web pour la gestion des absences",
+        "Intégration de fonctionnalités de suivi et de reporting",
+        "Collaboration avec une équipe de développeurs"
+      ],
+      icon: <Code className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+    },
+    {
+      id: 9,
+      type: 'project',
+      title: "Projet Initiative et Créativité (PIC)",
+      organization: "ESIGELEC",
+      date: "26 novembre 2022 - 7 mai 2023",
+      description: [
+        ""
+      ],
+      icon: <Code className="w-6 h-6" />,
+      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+    },
+    {
+      id: 10,
       type: 'education',
       title: "Prévention et Secours Civique de Niveau 1 (PSC1)",
       organization: "Fédération Nationale des Métiers de la Natation et du Sport",
