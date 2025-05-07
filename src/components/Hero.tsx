@@ -20,11 +20,11 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           {/* Photo de profil */}
           <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <div className="w-full h-auto max-h-[300px] md:max-h-[600px] overflow-hidden shadow-lg">
+            <div className="w-full h-auto max-h-[300px] md:max-h-[600px] overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-0">
               <img
                 src="Images/profil_abdoul.jpg"
                 alt="Abdoul Ahad Mbacké Diouf"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
               />
             </div>
           </div>

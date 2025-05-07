@@ -49,7 +49,7 @@ export default function Contact() {
           Me Contacter
         </h2>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Formulaire de contact */}
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
             <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Envoyez-moi un message</h3>
@@ -111,6 +111,15 @@ export default function Contact() {
                 <p className="text-red-600 dark:text-red-400 text-center">Une erreur est survenue. Veuillez réessayer.</p>
               )}
             </form>
+          </div>
+
+          {/* Photo de contact */}
+          <div className="bg-white dark:bg-gray-800 p-0 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <img 
+              src="Images/photo_contact.jpg" 
+              alt="Abdoul Ahad Mbacké Diouf" 
+              className="w-full h-full object-cover min-h-[400px] transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
 
           {/* Informations de contact */}
