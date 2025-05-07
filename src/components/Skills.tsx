@@ -42,9 +42,11 @@ export default function Skills() {
       skills: [
         { name: "Talend", level: 2 },
         { name: "NoSQL", level: 2 },
+        { name: "SPARK", level: 2 },
         { name: "SAP BI 4", level: 2 },
         { name: "R Studio", level: 2 },
         { name: "Power BI", level: 4 },
+        { name: "Hadoop/HDFS", level: 4 },
         { name: "Looker Studio", level: 3 },
         { name: "SQL Developer", level: 4 },
         { name: "MySQL, PL/SQL", level: 4 }
@@ -71,11 +73,15 @@ export default function Skills() {
       icon: <Monitor className="w-6 h-6" />,
       category: 'tools',
       skills: [
+        { name: "LLM", level: 2 },
+        { name: "Scala", level: 2 },
         { name: "Eclipse", level: 3 },
         { name: "Streamlit", level: 2 },
+        { name: "Elastic Search", level: 2 },
         { name: "Pack Microsoft", level: 4 },
         { name: "Jupyter Notebook", level: 4 },
-        { name: "Google Workspace", level: 4 }
+        { name: "Google Workspace", level: 4 },
+        { name: "Cloudera/Hortonworks", level: 2 },
       ]
     }
   ];

@@ -75,7 +75,7 @@ export default function About() {
                     <span className="font-medium">Date de naissance :</span> 12 novembre 2001
                   </p>
                   <p className="text-gray-600 dark:text-gray-300 mt-2">
-                    <span className="font-medium">Permis :</span> Permis B
+                    <span className="font-medium">Permis :</span> Permis B (Non véhiculé)
                   </p>
                 </div>
                 <div>

@@ -24,6 +24,50 @@ export default function Experience() {
     {
       id: 1,
       type: 'work',
+      title: "Développement d'un outil de Data Catalog et Data Lineage",
+      organization: "ORANGE SONATEL – Pôle Data",
+      date: "05 mai 2025 - 04 septembre 2025",
+      description: [
+        "🔹 Description des missions",
+        "Dans le cadre de mon stage au sein du pôle Data, je travaille sur deux projets structurants visant à optimiser la gestion des métadonnées et à assurer la traçabilité des données :",
+        "",
+        "Mise en place d'un outil de cataloguage de données :",
+        "Remplacement d'un fichier Excel manuel par une application intelligente et interactive permettant de centraliser, automatiser et enrichir la documentation des tables créées dans les bases de données \"refined\". Cet outil :",
+        "- détecte automatiquement les nouvelles tables créées via les logs ou métadonnées HDFS ;",
+        "- récupère les métadonnées depuis Cloudera, Elasticsearch et Grafana ;",
+        "- génère des descriptions sémantiques grâce à un LLM basé sur les noms des tables et colonnes ;",
+        "- propose une interface web moderne pour l'affichage et l'édition des informations.",
+        "",
+        "Développement d'un outil de Data Lineage visuel :",
+        "Conception d'un système permettant de représenter graphiquement les dépendances entre tables issues des bases \"trusted\", \"refined\" et \"reposting\". Cet outil permet :",
+        "- d'identifier toutes les tables impactées en cas de modification dans les données sources ;",
+        "- de visualiser les flux de transformation sous forme de graphe interactif, à la manière de Neo4j ;",
+        "- d'assurer une meilleure gouvernance des données et un suivi clair des impacts.",
+        "",
+        "🔹 Technologies et outils utilisés / explorés",
+        "- Big Data : Cloudera (Hadoop, HDFS, NiFi, Oozie), Apache Spark (Scala / Python)",
+        "- Base de données : Elasticsearch, HDFS, bases relationnelles",
+        "- Observabilité & monitoring : Grafana",
+        "- Langages : Python, Scala, SQL",
+        "- Développement d'interfaces : React.js (ou autre framework web selon validation), REST APIs",
+        "- IA/LLM : Intégration d'un modèle de langage pour la génération automatique de descriptions",
+        "- Visualisation : Neo4j (ou alternative pour la représentation de graphes)",
+        "- Méthodologie : Conception d'un cahier des charges détaillé, développement agile et itératif",
+        "",
+        "🔹 Compétences acquises / développées",
+        "- Conception d'architectures Big Data et compréhension des pipelines de traitement",
+        "- Automatisation de la documentation et gouvernance des données",
+        "- Intégration de LLM dans des cas concrets d'entreprise",
+        "- Développement web full-stack (backend Spark + frontend React)",
+        "- Visualisation avancée de graphes et gestion de la traçabilité des données",
+        "- Esprit d'analyse, structuration de projet, rédaction de cahier des charges technique"
+      ],
+      icon: <Briefcase className="w-6 h-6" />,
+      illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
+    },
+    {
+      id: 2,
+      type: 'work',
       title: "Stage Assistant Chargé Méthodes - Pilotage Zone NE",
       organization: "DALKIA EN",
       date: "08 avril 2024 - 04 octobre 2024",
@@ -36,10 +80,10 @@ export default function Experience() {
         "- Création d’outils de visualisation pour optimiser les méthodes des opérationnels"
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 2,
+      id: 3,
       type: 'work',
       title: "Stagiaire Agent de Production",
       organization: "La POSTE - PIC de Rouen Madrillet",
@@ -50,10 +94,10 @@ export default function Experience() {
         "Gestion logistique"
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/poste.jpg" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 3,
+      id: 4,
       type: 'work',
       title: "Stagiaire à la Direction des Opérateurs et des Opérations Internationales (DOI)",
       organization: "Orange Sénégal",
@@ -64,10 +108,10 @@ export default function Experience() {
         "Participation à l'élaboration de rapports"
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 4,
+      id: 5,
       type: 'work',
       title: "Stagiaire à la Direction des Systèmes d'Information (DSI)",
       organization: "Orange Sénégal",
@@ -79,10 +123,10 @@ export default function Experience() {
         "Support bureautique"
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 5,
+      id: 6,
       type: 'project',
       title: "Hackaton Med'ING Hack : Projet MIKANA",
       organization: "ESIGELEC",
@@ -93,10 +137,10 @@ export default function Experience() {
         "Présentation du projet devant un jury de professionnels"
       ],
       icon: <Award className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 6,
+      id: 7,
       type: 'project',
       title: "Approche Métier - Ingénieur R&D",
       organization: "ESIGELEC",
@@ -105,10 +149,10 @@ export default function Experience() {
         "Développement d'un outil d'analyse vidéo pour l'optimisation de la technique d'aviron"
       ],
       icon: <Code className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 7,
+      id: 8,
       type: 'project',
       title: "Développement d'un site de gestion de jeux de plateau",
       organization: "ESIGELEC",
@@ -117,10 +161,10 @@ export default function Experience() {
         ""
       ],
       icon: <Code className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 8,
+      id: 9,
       type: 'project',
       title: "Conception d'un outil de gestion des absences",
       organization: "ESIGELEC",
@@ -131,10 +175,10 @@ export default function Experience() {
         "Collaboration avec une équipe de développeurs"
       ],
       icon: <Code className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 9,
+      id: 10,
       type: 'project',
       title: "Projet Initiative et Créativité (PIC)",
       organization: "ESIGELEC",
@@ -143,10 +187,10 @@ export default function Experience() {
         ""
       ],
       icon: <Code className="w-6 h-6" />,
-      illustration: "/Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
     },
     {
-      id: 10,
+      id: 11,
       type: 'education',
       title: "Prévention et Secours Civique de Niveau 1 (PSC1)",
       organization: "Fédération Nationale des Métiers de la Natation et du Sport",
@@ -155,7 +199,7 @@ export default function Experience() {
         ""
       ],
       icon: <Award className="w-6 h-6" />,
-      illustration: "../../public/Images/Certificat_PSC1.jpg"
+      illustration: "Images/Certificat_PSC1.jpg"
     }
   ];
 
@@ -240,7 +284,7 @@ export default function Experience() {
                     className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="card p-6">
+                    <div className="card p-6 cursor-pointer" onClick={() => handleItemClick(item.id)}>
                       <div className="flex items-center gap-4 mb-4 justify-start">
                         <div className="p-2 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white">
                           {item.icon}
