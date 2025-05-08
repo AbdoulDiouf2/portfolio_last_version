@@ -42,13 +42,26 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-col items-center md:items-start gap-4 animate-fade-in-delayed">
-              <a
-                href="/portfolio_last_version/Documents/CV_AAMD_Alternance_BAC+6.pdf"
-                download
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium py-2 px-4 rounded-lg hover:opacity-90 transition-opacity"
-              >
-                <Download className="w-5 h-5" /> Télécharger le CV
-              </a>
+              <div className="flex items-center relative">  
+                <a
+                  href="/portfolio_last_version/Documents/CV_AAMD_Alternance_BAC+6.pdf"
+                  download
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium py-2 px-4 rounded-lg hover:opacity-90 transition-opacity"
+                >
+                  <Download className="w-5 h-5" /> Télécharger le CV
+                </a>
+                <div className="relative ml-2 group">
+                  <div className="w-6 h-6 rounded-full bg-transparent border border-white flex items-center justify-center cursor-help">
+                    <span className="text-white font-bold text-xs">!</span>
+                  </div>
+                  <div className="absolute left-1/2 bottom-full mb-2 -translate-x-1/2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 w-max max-w-xs">
+                    <div className="bg-gray-800 text-white text-sm rounded-lg py-2 px-3 shadow-lg">
+                      CV mis à jour le 08/05/2025
+                      <div className="absolute w-2 h-2 bg-gray-800 transform rotate-45 left-1/2 -translate-x-1/2 -bottom-1"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
