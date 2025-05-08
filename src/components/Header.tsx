@@ -22,16 +22,21 @@ export default function Header() {
             AAMD
           </a>
           
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="hidden md:flex items-center">
+            <div className="flex space-x-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <div className="ml-8">
+              <SocialLinks />
+            </div>
           </div>
 
           <button
@@ -72,7 +77,7 @@ const SocialLinks = () => (
     <a href="https://github.com/AbdoulDiouf2" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
       <Github size={20} />
     </a>
-    <a href="www.linkedin.com/in/abdoul-ahad-mbacké-diouf-5b04b4213" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
+    <a href="https://www.linkedin.com/in/abdoul-ahad-mback%C3%A9-diouf-5b04b4213/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
       <Linkedin size={20} />
     </a>
     <a href="mailto:aad.mbacke691@gmail.com" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">

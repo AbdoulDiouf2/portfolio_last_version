@@ -138,14 +138,14 @@ export default function Contact() {
                 icon={<Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />}
                 title="Téléphone"
                 content="+33 7 49 05 18 79"
-                href="tel:+33753470848"
+                href="tel:+33749051879"
               />
               
               <ContactItem
                 icon={<MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />}
                 title="Localisation"
                 content="Rouen, France"
-                href="https://www.google.com/maps/place/1+P%C3%A9ri+Robespierre,+76800+Saint-%C3%89tienne-du-Rouvray/@49.3963723,1.0681935,540m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e0dfcc2c5773ab:0x33acfbfcafbcf25d!8m2!3d49.3963688!4d1.0707684!16s%2Fg%2F11c1dbt3rd?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/place/Rouen,+France/@49.4412842,1.0499851,10786m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e0de76ca71faab:0x3d1cabefa49f93d6!8m2!3d49.4435261!4d1.0984309!16zL20vMGQzM2s?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D"
               />
             </div>
 
@@ -158,7 +158,7 @@ export default function Contact() {
                   label="GitHub"
                 />
                 <SocialLink
-                  href="https://www.linkedin.com/in/abdoul-ahad-mback%C3%A9-diouf-4557a7173/"
+                  href="https://www.linkedin.com/in/abdoul-ahad-mback%C3%A9-diouf-5b04b4213/"
                   icon={<Linkedin className="w-6 h-6" />}
                   label="LinkedIn"
                 />
