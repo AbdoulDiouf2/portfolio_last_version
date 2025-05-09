@@ -1,9 +1,11 @@
-// Aucune importation React nécessaire dans ce fichier
+import React from 'react';
 import { Database, Server, Brain, Download } from 'lucide-react';
+import HeroBackground3D from './HeroBackground3D';
 
 export default function Hero() {
   return (
     <section id="home" className="h-screen flex flex-col justify-center items-center px-4 md:px-8 lg:px-16 relative overflow-hidden bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
+      <HeroBackground3D />
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 animate-float">
           <Database className="w-12 h-12 text-blue-200 dark:text-blue-400" />

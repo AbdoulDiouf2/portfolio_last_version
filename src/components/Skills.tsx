@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Code, Database, Wrench, Monitor } from 'lucide-react';
+import { Code, Database, Wrench, Monitor, BarChart3, Box } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Skills3D from './Skills3D';
 
 // Interface pour représenter une compétence avec son niveau
-interface Skill {
+export interface Skill {
   name: string;
   level: number; // Sur une échelle de 1 à 5
 }
@@ -18,6 +19,7 @@ interface SkillCategory {
 
 export default function Skills() {
   const [activeFilter, setActiveFilter] = useState<string>('all');
+  const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d'); // Utiliser le mode 2D par défaut
 
   const skillCategories: SkillCategory[] = [
     {
@@ -101,34 +103,95 @@ export default function Skills() {
           Compétences Techniques
         </h2>
 
-        {/* Filtres */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {filters.map((filter) => (
-            <motion.button
-              key={filter.name}
-              onClick={() => setActiveFilter(filter.name)}
-              className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                activeFilter === filter.name
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+        {/* Contrôles: Filtres et Toggle de visualisation */}
+        <div className="flex flex-col items-center mb-12 space-y-6">
+          {/* Toggle de visualisation 2D/3D */}
+          <div className="flex items-center bg-gray-200 dark:bg-gray-700 rounded-full p-1 mb-4">
+            <button
+              onClick={() => setViewMode('2d')}
+              className={`flex items-center px-4 py-2 rounded-full transition-all duration-300 ${viewMode === '2d' ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' : 'text-gray-700 dark:text-gray-300'}`}
             >
-              {filter.label}
-            </motion.button>
-          ))}
+              <BarChart3 className="w-4 h-4 mr-2" /> 2D
+            </button>
+            <button
+              onClick={() => setViewMode('3d')}
+              className={`flex items-center px-4 py-2 rounded-full transition-all duration-300 ${viewMode === '3d' ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white' : 'text-gray-700 dark:text-gray-300'}`}
+            >
+              <Box className="w-4 h-4 mr-2" /> 3D
+            </button>
+          </div>
+          
+          {/* Filtres */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {filters.map((filter) => (
+              <motion.button
+                key={filter.name}
+                onClick={() => setActiveFilter(filter.name)}
+                className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                  activeFilter === filter.name
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {filter.label}
+              </motion.button>
+            ))}
+          </div>
         </div>
 
         {/* Grille de compétences */}
-        <div className={`${activeFilter !== 'all' ? 'flex justify-center' : ''}`}>
-          <div className={`grid grid-cols-1 ${activeFilter === 'all' ? 'md:grid-cols-2 lg:grid-cols-4' : 'max-w-md'} gap-6`}>
-            <AnimatePresence mode="wait">
+        {viewMode === '2d' ? (
+          <div className="w-full">
+            <div className={`grid grid-cols-1 ${activeFilter === 'all' ? 'md:grid-cols-2 lg:grid-cols-4' : 'max-w-md mx-auto'} gap-6`}>
+              <AnimatePresence mode="wait">
+                {skillCategories
+                  .filter(category => activeFilter === 'all' || category.category === activeFilter)
+                  .map((category) => (
+                    <motion.div
+                      key={category.title}
+                      className="p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800 transition-colors duration-300"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="text-blue-600 dark:text-blue-400">
+                          {category.icon}
+                        </div>
+                        <h3 className="text-xl font-semibold ml-2 text-gray-800 dark:text-gray-200">{category.title}</h3>
+                      </div>
+                      <ul className="space-y-3">
+                        {category.skills.map((skill) => (
+                          <li key={skill.name} className="flex flex-col">
+                            <div className="flex justify-between items-center mb-1">
+                              <span className="text-gray-600 dark:text-gray-300">{skill.name}</span>
+                              <span className="text-xs text-gray-500 dark:text-gray-400">{renderSkillLevel(skill.level)}</span>
+                            </div>
+                            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                              <div 
+                                className={`h-2.5 rounded-full ${getSkillLevelColor(skill.level)}`} 
+                                style={{ width: `${skill.level * 20}%` }}
+                              ></div>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  ))}
+              </AnimatePresence>
+            </div>
+          </div>
+        ) : (
+          <div className="w-full">
+            <div className={`grid grid-cols-1 ${activeFilter === 'all' ? 'md:grid-cols-2' : 'max-w-xl mx-auto'} gap-6`}>
               {skillCategories
                 .filter(category => activeFilter === 'all' || category.category === activeFilter)
                 .map((category) => (
                   <motion.div
-                    key={category.title}
+                    key={`3d-${category.title}`}
                     className="p-6 rounded-lg shadow-lg bg-white dark:bg-gray-800 transition-colors duration-300"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -141,27 +204,19 @@ export default function Skills() {
                       </div>
                       <h3 className="text-xl font-semibold ml-2 text-gray-800 dark:text-gray-200">{category.title}</h3>
                     </div>
-                    <ul className="space-y-3">
-                      {category.skills.map((skill) => (
-                        <li key={skill.name} className="flex flex-col">
-                          <div className="flex justify-between items-center mb-1">
-                            <span className="text-gray-600 dark:text-gray-300">{skill.name}</span>
-                            <span className="text-xs text-gray-500 dark:text-gray-400">{renderSkillLevel(skill.level)}</span>
-                          </div>
-                          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                            <div 
-                              className={`h-2.5 rounded-full ${getSkillLevelColor(skill.level)}`} 
-                              style={{ width: `${skill.level * 20}%` }}
-                            ></div>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
+                    
+                    <Skills3D 
+                      skills={category.skills} 
+                      categoryTitle={category.title}
+                      categoryColor={category.category === 'programming' ? '#3b82f6' : 
+                                     category.category === 'data' ? '#8b5cf6' : 
+                                     category.category === 'devops' ? '#6366f1' : '#a78bfa'}
+                    />
                   </motion.div>
                 ))}
-            </AnimatePresence>
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="mt-12 max-w-4xl mx-auto">
           <div className="bg-white p-6 rounded-xl shadow-lg dark:bg-gray-800 transition-colors duration-300">

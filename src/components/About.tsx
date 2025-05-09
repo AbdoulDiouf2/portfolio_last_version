@@ -1,11 +1,13 @@
 import React from 'react';
 import { GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import AboutBackground from './AboutBackground';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+      <AboutBackground />
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           À Propos de Moi
         </h2>

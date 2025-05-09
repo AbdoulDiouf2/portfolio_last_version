@@ -68,6 +68,33 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+
+@keyframes pulse-slow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
 .animate-float-0 {
   animation: float 6s ease-in-out infinite;
 }
@@ -90,6 +117,15 @@
   opacity: 0;
 }
 
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+  transform-origin: center;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite;
+}
+
 .section-bg {
   @apply relative bg-surface-light dark:bg-surface-dark transition-colors duration-300;
 }
@@ -97,6 +133,13 @@
 .card {
   @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300
          border border-gray-200 dark:border-gray-700;
+}
+
+/* Motif de grille pour les arrière-plans */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(128, 128, 128, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(128, 128, 128, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 .input {
