@@ -13,12 +13,38 @@ export default function Header() {
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  
+  // Fonction pour assurer un défilement doux vers les sections
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    
+    // Enlever le # pour obtenir l'ID
+    const id = targetId.replace('#', '');
+    const targetElement = document.getElementById(id);
+    
+    if (targetElement) {
+      // Fermer le menu mobile si ouvert
+      if (isOpen) {
+        setIsOpen(false);
+      }
+      
+      // Scroller doucement vers l'élément
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <header className="fixed w-full top-0 z-50 transition-colors duration-300 dark:bg-gray-900 bg-white/80 backdrop-blur-sm">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <a 
+            href="#home" 
+            onClick={(e) => handleSmoothScroll(e, '#home')}
+            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+          >
             AAMD
           </a>
           
@@ -28,6 +54,7 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
                   className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300"
                 >
                   {link.label}
@@ -55,7 +82,7 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={toggleMenu}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
                   className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300"
                 >
                   {link.label}

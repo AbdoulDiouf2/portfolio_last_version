@@ -1,4 +1,4 @@
-import React from 'react';
+// Aucune importation React nécessaire dans ce fichier
 import { Database, Server, Brain, Download } from 'lucide-react';
 
 export default function Hero() {
@@ -70,9 +70,4 @@ export default function Hero() {
   );
 }
 
-const KeyStrength = ({ icon, text }: { icon: React.ReactNode; text: string }) => (
-  <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-md">
-    {icon}
-    <span className="font-medium text-gray-700">{text}</span>
-  </div>
-);
+// Ce composant était précédemment défini mais n'était pas utilisé

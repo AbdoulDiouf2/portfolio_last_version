@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -6,6 +6,8 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import ThemeToggle from './components/ThemeToggle';
+import ScrollButton from './components/ScrollButton';
+import ChatbotAssistant from './components/ChatbotAssistant';
 import { motion } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -40,6 +42,8 @@ function App() {
           <Contact />
         </motion.div>
         <ThemeToggle />
+        <ScrollButton />
+        <ChatbotAssistant />
       </div>
     </ThemeProvider>
   );
