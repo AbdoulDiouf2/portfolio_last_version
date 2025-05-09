@@ -12,6 +12,7 @@ Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/p
 - **Bundler** : Vite
 - **Styling** : Tailwind CSS
 - **Animations** : Framer Motion
+- **Visualisations 3D** : Three.js
 - **Icônes** : Lucide React
 - **Formulaire de contact** : EmailJS
 - **Interactions** : EmailJS, Framer Motion
@@ -22,6 +23,10 @@ Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/p
 - Design responsive s'adaptant à tous les appareils
 - Mode sombre/clair avec conservation des préférences
 - Animations fluides pour une navigation agréable
+- Visualisations et arrière-plans 3D interactifs :
+  - Arrière-plan 3D avec particules réactives dans la section d'accueil
+  - Visualisation des compétences en bulles 3D interactives (avec option de basculer vers 2D)
+  - Arrière-plan animé thématique pour la section À Propos
 - Navigation interactive :
   - Défilement doux vers les sections lors des clics sur les liens
   - Bouton intelligent qui permet de remonter/descendre selon la position de l'utilisateur
@@ -46,16 +51,19 @@ Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/p
 ### Installation
 
 1. Clonez ce dépôt sur votre machine locale
+
    ```bash
    git clone https://github.com/AbdoulDiouf2/portfolio_last_version.git
    ```
 
 2. Accédez au répertoire du projet
+
    ```bash
    cd portfolio_last_version
    ```
 
 3. Installez les dépendances
+
    ```bash
    npm install
    # ou
@@ -65,6 +73,7 @@ Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/p
 ### Lancement en local
 
 Pour démarrer le serveur de développement :
+
 ```bash
 npm run dev
 # ou
@@ -76,6 +85,7 @@ Le site sera accessible à l'adresse `http://localhost:5173/`
 ### Construction pour la production
 
 Pour générer les fichiers de production :
+
 ```bash
 npm run build
 # ou
@@ -86,15 +96,18 @@ Les fichiers générés se trouveront dans le dossier `dist/`.
 
 ## 📂 Structure du projet
 
-```
+```text
 portfolio_last_version/
 ├── public/            # Ressources statiques (images, documents)
 ├── src/
 │   ├── components/    # Composants React réutilisables
 │   │   ├── Header.tsx           # Navigation et liens
 │   │   ├── Hero.tsx             # Section d'accueil
+│   │   ├── HeroBackground3D.tsx # Arrière-plan 3D pour la section d'accueil
 │   │   ├── About.tsx            # Section à propos
+│   │   ├── AboutBackground.tsx  # Arrière-plan animé pour la section à propos
 │   │   ├── Skills.tsx           # Section compétences
+│   │   ├── Skills3D.tsx         # Visualisation 3D des compétences
 │   │   ├── Experience.tsx       # Section expériences
 │   │   ├── Contact.tsx          # Section contact
 │   │   ├── ThemeToggle.tsx      # Bouton de changement de thème
@@ -117,12 +130,14 @@ Pour déployer vos modifications locales sur GitHub Pages, suivez ces étapes :
 1. Effectuez vos modifications localement
 2. Testez-les en utilisant `npm run dev` ou `yarn dev`
 3. Après avoir validé vos changements, commitez et pushez-les sur GitHub :
+
    ```bash
    git add .
    git commit -m "Description des changements"
    git push origin main
    ```
 4. Déployez les modifications sur GitHub Pages :
+
    ```bash
    npm run deploy
    # ou
@@ -130,6 +145,7 @@ Pour déployer vos modifications locales sur GitHub Pages, suivez ces étapes :
    ```
 
 Cette commande va :
+
 1. Construire le projet (`npm run build`)
 2. Publier le contenu du dossier `dist/` sur la branche `gh-pages`
 3. Mettre à jour automatiquement le site hébergé
@@ -147,6 +163,7 @@ Cette commande va :
 Le portfolio intègre un assistant virtuel conversationnel qui permet aux visiteurs de poser des questions sur mon profil, mes compétences, mes expériences et mes projets. L'assistant est accessible via un bouton flottant en bas à droite de l'écran.
 
 Fonctionnalités de l'assistant :
+
 - Réponses contextuelles basées sur mon CV et mon parcours
 - Interface de chat conviviale et intuitive
 - Possibilité de poser des questions sur ma formation, mes compétences, mes expériences professionnelles, etc.

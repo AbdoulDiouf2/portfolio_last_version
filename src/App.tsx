@@ -10,11 +10,38 @@ import ScrollButton from './components/ScrollButton';
 import ChatbotAssistant from './components/ChatbotAssistant';
 import { motion } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
+import ReactGA from 'react-ga4';
 
 function App() {
   useEffect(() => {
     // Set default theme to dark mode
     document.documentElement.classList.add('dark');
+    
+    // Envoyer un événement de page vue à Google Analytics
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+    
+    // Fonction pour suivre les vues des sections
+    const trackSectionView = () => {
+      const sections = document.querySelectorAll('section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            ReactGA.event({
+              category: 'Section',
+              action: 'view',
+              label: entry.target.id
+            });
+          }
+        });
+      }, { threshold: 0.6 }); // Déclencher lorsque 60% de la section est visible
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    };
+    
+    // Initialiser le suivi des sections
+    trackSectionView();
   }, []);
 
   const sectionVariants = {
