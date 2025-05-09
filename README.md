@@ -14,6 +14,7 @@ Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/p
 - **Animations** : Framer Motion
 - **Icônes** : Lucide React
 - **Formulaire de contact** : EmailJS
+- **Interactions** : EmailJS, Framer Motion
 - **Hébergement** : GitHub Pages
 
 ## 📋 Fonctionnalités
@@ -21,6 +22,10 @@ Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/p
 - Design responsive s'adaptant à tous les appareils
 - Mode sombre/clair avec conservation des préférences
 - Animations fluides pour une navigation agréable
+- Navigation interactive :
+  - Défilement doux vers les sections lors des clics sur les liens
+  - Bouton intelligent qui permet de remonter/descendre selon la position de l'utilisateur
+  - Chatbot assistant qui répond aux questions sur mon profil et parcours
 - Sections détaillées présentant :
   - Accueil avec présentation générale
   - À propos (parcours, formation, centres d'intérêt)
@@ -29,6 +34,7 @@ Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/p
   - Projets
   - Contact
 - Intégration de liens vers les réseaux sociaux et le CV
+- Interface utilisateur intuitive avec boutons semi-transparents qui deviennent plus visibles au survol
 
 ## 🛠️ Installation et utilisation en local
 
@@ -85,6 +91,16 @@ portfolio_last_version/
 ├── public/            # Ressources statiques (images, documents)
 ├── src/
 │   ├── components/    # Composants React réutilisables
+│   │   ├── Header.tsx           # Navigation et liens
+│   │   ├── Hero.tsx             # Section d'accueil
+│   │   ├── About.tsx            # Section à propos
+│   │   ├── Skills.tsx           # Section compétences
+│   │   ├── Experience.tsx       # Section expériences
+│   │   ├── Contact.tsx          # Section contact
+│   │   ├── ThemeToggle.tsx      # Bouton de changement de thème
+│   │   ├── ScrollButton.tsx     # Bouton de défilement intelligent
+│   │   ├── ChatbotAssistant.tsx # Assistant virtuel conversationnel
+│   │   └── ... 
 │   ├── context/       # Contextes React (thème, etc.)
 │   ├── App.tsx        # Composant principal
 │   ├── main.tsx       # Point d'entrée
@@ -125,3 +141,13 @@ Cette commande va :
 - 📧 Email : [aad.mbacke691@gmail.com](mailto:aad.mbacke691@gmail.com)
 - 🔗 LinkedIn : [Abdoul Ahad Mbacké Diouf](https://www.linkedin.com/in/abdoul-ahad-mbacké-diouf-5b04b4213)
 - 🔗 GitHub : [AbdoulDiouf2](https://github.com/AbdoulDiouf2)
+
+## 🤖 Assistant virtuel
+
+Le portfolio intègre un assistant virtuel conversationnel qui permet aux visiteurs de poser des questions sur mon profil, mes compétences, mes expériences et mes projets. L'assistant est accessible via un bouton flottant en bas à droite de l'écran.
+
+Fonctionnalités de l'assistant :
+- Réponses contextuelles basées sur mon CV et mon parcours
+- Interface de chat conviviale et intuitive
+- Possibilité de poser des questions sur ma formation, mes compétences, mes expériences professionnelles, etc.
+- Disponible en permanence pour aider les recruteurs ou visiteurs à découvrir mon profil

@@ -74,57 +74,66 @@ export default function ChatbotAssistant() {
   
   // Fonction pour générer des réponses basées sur les mots-clés
   const generateResponse = (question: string): string => {
-    // Convertir la question en minuscules pour une correspondance insensible à la casse
-    const lowerQuestion = question.toLowerCase();
-    
-    // Réponses basées sur des mots-clés
-    if (lowerQuestion.includes('bonjour') || lowerQuestion.includes('salut') || lowerQuestion.includes('hello')) {
-      return "Bonjour ! Je suis l'assistant virtuel d'Abdoul Ahad. Comment puis-je vous aider ?";
+    const lower = question.toLowerCase();
+  
+    if (lower.includes('bonjour') || lower.includes('salut') || lower.includes('hello')) {
+      return "Bonjour ! Je suis l'assistant virtuel d'Abdoul Ahad Mbacké Diouf. Posez-moi une question sur son profil, ses compétences, ses expériences ou ses projets.";
     }
-    
-    if (lowerQuestion.includes('qui es-tu') || lowerQuestion.includes('qui êtes-vous')) {
-      return "Je suis l'assistant virtuel d'Abdoul Ahad Mbacké Diouf, un étudiant ingénieur en Big Data à l'ESIGELEC à Rouen, France.";
+  
+    if (lower.includes('qui es-tu') || lower.includes('présente toi') || lower.includes('présentation')) {
+      return "Je suis l'assistant d'Abdoul Ahad Mbacké Diouf, ingénieur en alternance spécialisé en Big Data et Intelligence Artificielle, formé à l’ESIGELEC et actuellement en Mastère à Sup de Vinci.";
     }
-    
-    if (lowerQuestion.includes('formation') || lowerQuestion.includes('étude') || lowerQuestion.includes('parcours') || lowerQuestion.includes('études')) {
-      return "Abdoul Ahad est étudiant en Big Data pour la Transformation Numérique à l'ESIGELEC (Rouen, 2022-2025). Il a également étudié à l'ESMT de Dakar en classes préparatoires (2020-2022) et a obtenu son baccalauréat scientifique au Lycée d'Excellence Privé Birago DIOP à Dakar.";
+  
+    if (lower.includes('formation') || lower.includes('études') || lower.includes('parcours')) {
+      return "Abdoul suit un Mastère 2 Big Data & IA à Sup de Vinci (2025-2026) et est diplômé de l’ESIGELEC (2022-2025) en Big Data. Il a aussi étudié à l'ESMT de Dakar (prépa) et au lycée Birago Diop (série S).";
     }
-    
-    if (lowerQuestion.includes('compétence') || lowerQuestion.includes('savoir-faire') || lowerQuestion.includes('skill')) {
-      return "Abdoul Ahad possède des compétences dans plusieurs domaines : langages de programmation (Python, Java, SQL, C), Big Data (Hadoop, Power BI, Talend), technologies de développement (Git, Docker) et d'autres outils comme Jupyter Notebook et Microsoft Office.";
+  
+    if (lower.includes('expérience') || lower.includes('stage') || lower.includes('professionnel') || lower.includes('orange') || lower.includes('dalkia')) {
+      return "Abdoul a été stagiaire Data Engineer chez Orange Sénégal en 2025 (catalogage, lineage, Cloudera). Avant cela, Assistant Chargé Méthodes chez DALKIA EN en 2024 (KPI, GMAO, Looker Studio). Il a aussi travaillé à La POSTE en 2023.";
     }
-    
-    if (lowerQuestion.includes('expérience') || lowerQuestion.includes('stage') || lowerQuestion.includes('travail') || lowerQuestion.includes('job')) {
-      return "Abdoul Ahad a réalisé un stage chez DALKIA EN (2024) comme Assistant Chargé Méthodes où il a travaillé sur la GMAO et Looker Studio. Il a également travaillé à La POSTE (2023) et chez Orange Sénégal (2021-2022) dans différents services.";
+  
+    if (lower.includes('compétence') || lower.includes('technologie') || lower.includes('technique') || lower.includes('outil')) {
+      return "Abdoul maîtrise : Python, Java, SQL, PL/SQL, R, C, Hadoop, Spark, Oozie, Talend, Power BI, Looker Studio, Docker, MongoDB, Git, ArcGIS, et Azure. Il parle aussi anglais niveau B2 (TOEIC validé).";
     }
-    
-    if (lowerQuestion.includes('projet') || lowerQuestion.includes('réalisation')) {
-      return "Abdoul Ahad a participé à plusieurs projets : le Hackaton Med'ING Hack avec le projet MIKANA, un projet d'analyse vidéo pour l'optimisation de la technique d'aviron, et le développement d'outils de gestion (absences, jeux de plateau).";
+  
+    if (lower.includes('projet') || lower.includes('réalisation') || lower.includes('hackathon') || lower.includes('mikana') || lower.includes('analyse vidéo')) {
+      return "Ses projets incluent MIKANA (solution IA logistique, Hackathon Med’ING), un outil d’analyse vidéo pour l’aviron (MediaPipe, OpenCV), et des dashboards décisionnels dans ses stages.";
     }
-    
-    if (lowerQuestion.includes('contact') || lowerQuestion.includes('email') || lowerQuestion.includes('téléphone')) {
-      return "Vous pouvez contacter Abdoul Ahad par email à aad.mbacke691@gmail.com ou par téléphone au +33 7 49 05 18 79. Il est basé à Rouen, France.";
+  
+    if (lower.includes('langue') || lower.includes('parle') || lower.includes('anglais') || lower.includes('toeic')) {
+      return "Abdoul parle français couramment et possède un niveau B2 en anglais (TOEIC validé).";
     }
-    
-    if (lowerQuestion.includes('langue') || lowerQuestion.includes('parle')) {
-      return "Abdoul Ahad parle couramment français et a un niveau B2 en anglais (TOEIC).";
+  
+    if (lower.includes('cv') || lower.includes('curriculum')) {
+      return "Le CV d'Abdoul Ahad est disponible dans la section d'accueil du site ou via son portfolio : https://abdouldiouf2.github.io/portfolio_last_version/";
     }
-    
-    if (lowerQuestion.includes('intérêt') || lowerQuestion.includes('passion') || lowerQuestion.includes('hobby') || lowerQuestion.includes('loisir')) {
-      return "Abdoul Ahad s'intéresse à la Data & l'Intelligence Artificielle, aux technologies innovantes, au développement web, aux SIG, aux sports collectifs comme le football, aux jeux de réflexion comme le Scrabble, et participe régulièrement à des hackathons.";
+  
+    if (lower.includes('contact') || lower.includes('email') || lower.includes('téléphone')) {
+      return "Vous pouvez contacter Abdoul par email à aad.mbacke691@gmail.com ou au +33 7 49 05 18 79. Il est basé à Nantes et disponible partout en France.";
     }
-    
-    if (lowerQuestion.includes('merci') || lowerQuestion.includes('thanks')) {
-      return "Avec plaisir ! N'hésitez pas si vous avez d'autres questions sur Abdoul Ahad Mbacké Diouf.";
+  
+    if (lower.includes('loisir') || lower.includes('passion') || lower.includes('intérêt') || lower.includes('hobby') || lower.includes('sport')) {
+      return "En dehors de la data, Abdoul aime le football entre amis, le Scrabble en famille, les jeux de stratégie et participer à des hackathons.";
     }
-    
-    if (lowerQuestion.includes('cv') || lowerQuestion.includes('curriculum') || lowerQuestion.includes('résumé')) {
-      return "Vous pouvez télécharger le CV d'Abdoul Ahad directement depuis la section d'accueil du site, il a été mis à jour le 08/05/2025.";
+  
+    if (lower.includes('merci') || lower.includes('thanks') || lower.includes('thank')) {
+      return "Avec plaisir ! Je reste à votre disposition pour toute autre question sur le profil d'Abdoul Ahad.";
     }
-    
-    // Réponse par défaut si aucun mot-clé n'est détecté
-    return "Je n'ai pas toutes les informations sur ce sujet. N'hésitez pas à poser une question sur la formation, les compétences, les expériences professionnelles ou les projets d'Abdoul Ahad.";
+  
+    // Filtrage hors sujet
+    const sujetProfessionnel = [
+      "formation", "étude", "expérience", "stage", "projet", "compétence",
+      "skill", "langue", "cv", "contact", "travail", "mikana", "big data", "ia"
+    ];
+    const concernePortfolio = sujetProfessionnel.some(word => lower.includes(word));
+    if (!concernePortfolio) {
+      return "Cette question ne semble pas concerner le profil professionnel d'Abdoul Ahad. Je vous invite à utiliser le formulaire de contact dans la section 'Message' de son portfolio.";
+    }
+  
+    // Réponse par défaut
+    return "Je n'ai pas d'information exacte à ce sujet. Vous pouvez poser une question sur sa formation, ses expériences, ses compétences ou ses projets.";
   };
+  
   
   return (
     <>
