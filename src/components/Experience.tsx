@@ -200,7 +200,25 @@ export default function Experience() {
       ],
       icon: <Award className="w-6 h-6" />,
       illustration: "Images/Certificat_PSC1.jpg"
+    },
+    {
+      id: 12,
+      type: 'work',
+      title: "Développement Plateforme Touba Aviation & Tours",
+      organization: "Touba Aviation & Tours",
+      date: "Freelance - Début du projet : Mai 2025",
+      description: [
+        "- Conception et développement d'une plateforme complète pour une agence de voyages et de services internationaux",
+        "- Création d’un site client public pour la soumission de demandes de services (React, Vite, TailwindCSS)",
+        "- Développement d’un panneau d’administration sécurisé pour la gestion interne (React, Vite, Auth)",
+        "- Mise en place d’un backend via Supabase (PostgreSQL, Auth, Storage) et Express.js",
+        "- Intégration de fonctionnalités clés : génération de PDF, tableaux de bord, suivi client, gestion documentaire",
+        "- Déploiement multi-environnements (Netlify, VPS) avec configurations de sécurité (HTTPS, JWT)"
+      ],
+      icon: <Briefcase className="w-6 h-6" />,
+      illustration: "Images/touba-aviation.png" // à placer dans le dossier public
     }
+    
   ];
 
   const handleItemClick = (id: number) => {
