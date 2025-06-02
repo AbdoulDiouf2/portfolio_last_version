@@ -144,8 +144,8 @@ export default function Contact() {
               <ContactItem
                 icon={<MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />}
                 title="Localisation"
-                content="Rouen, France"
-                href="https://www.google.com/maps/place/Rouen,+France/@49.4412842,1.0499851,10786m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47e0de76ca71faab:0x3d1cabefa49f93d6!8m2!3d49.4435261!4d1.0984309!16zL20vMGQzM2s?entry=ttu&g_ep=EgoyMDI1MDUwNS4wIKXMDSoASAFQAw%3D%3D"
+                content="Saint-Etienne-Du-Rouvray, France"
+                href="https://www.google.com/maps/place/76800+Saint-%C3%89tienne-du-Rouvray,+France/@49.4013507,1.0692001,2158m/data=!3m1!1e3!4m6!3m5!1s0x47e0df735c487bf1:0x3ffa0ba61519ded0!8m2!3d49.380305!4d1.108209!16zL20vMGQ1MTYy?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
               />
             </div>
 
