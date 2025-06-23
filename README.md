@@ -8,7 +8,7 @@ Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/p
 
 ou à cette adresse si la précèdente ne marche pas
 
-Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/portfolio_last_version](https://AbdoulDiouf2.github.io/portfolio_last_version)
+Le site est accessible à l'adresse suivante : [https://aamd-portfolio.vercel.app/](https://aamd-portfolio.vercel.app/)
 
 ## 💻 Technologies utilisées
 
