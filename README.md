@@ -6,6 +6,10 @@ Ce dépôt contient le code source de mon portfolio personnel, qui présente mon
 
 Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/portfolio_last_version](https://AbdoulDiouf2.github.io/portfolio_last_version)
 
+ou à cette adresse si la précèdente ne marche pas
+
+Le site est accessible à l'adresse suivante : [https://AbdoulDiouf2.github.io/portfolio_last_version](https://AbdoulDiouf2.github.io/portfolio_last_version)
+
 ## 💻 Technologies utilisées
 
 - **Framework** : React.js avec TypeScript
