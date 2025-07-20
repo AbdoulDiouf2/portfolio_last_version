@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, Code, Award, Calendar } from 'lucide-react';
 import BackgroundAnimation from './BackgroundAnimation';
@@ -221,15 +221,12 @@ export default function Experience() {
     
   ];
 
-  const handleItemClick = (id: number) => {
-    setSelectedItem(id);
-    setModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedItem(null);
-    setModalOpen(false);
-  };
+  // Optimisation: Mémoriser le filtrage des items
+  const filteredItems = useMemo(() => {
+    return timelineItems.filter(item => 
+      selectedType === 'all' || item.type === selectedType
+    );
+  }, [selectedType]);
 
   const filterButtons = [
     { type: 'all', label: 'Tout' },
@@ -238,9 +235,16 @@ export default function Experience() {
     { type: 'project', label: 'Projets Académiques' }
   ];
 
-  const filteredItems = timelineItems.filter(
-    item => selectedType === 'all' || item.type === selectedType
-  );
+  // Optimisation: Mémoriser les handlers
+  const handleItemClick = useCallback((id: number) => {
+    setSelectedItem(id);
+    setModalOpen(true);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setModalOpen(false);
+    setSelectedItem(null);
+  }, []);
 
   return (
     <section id="experience" className="py-20 section-bg">
