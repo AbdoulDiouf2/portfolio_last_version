@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
-import { X } from 'lucide-react';
+import { X, ExternalLink, Github, FileText, Link as LinkIcon, Image as ImageIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ModalProps {
@@ -8,9 +8,11 @@ interface ModalProps {
   title: string;
   children: React.ReactNode;
   illustration?: string; // URL of the illustration image, now optional
+  skills?: string[]; // badges
+  links?: { label: string; href: string; external?: boolean; type?: 'github' | 'pdf' | 'website' | 'external' | 'image' | 'doc' }[]; // CTA
 }
 
-export default function Modal({ isOpen, onClose, title, children, illustration }: ModalProps) {
+export default function Modal({ isOpen, onClose, title, children, illustration, skills, links }: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -123,8 +125,68 @@ export default function Modal({ isOpen, onClose, title, children, illustration }
                 </div>
               )}
 
-              <div className="px-6 py-6 text-gray-700 dark:text-gray-300 max-h-[70vh] overflow-y-auto border-t border-gray-100 dark:border-gray-700">
-                {children}
+              <div className="px-6 py-6 text-gray-700 dark:text-gray-300 max-h-[70vh] overflow-y-auto border-t border-gray-100 dark:border-gray-700 space-y-6">
+                <div>
+                  {children}
+                </div>
+
+                {skills && skills.length > 0 && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Compétences</h4>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {skills.map((s, i) => (
+                        <span
+                          key={`skill-${i}`}
+                          className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {links && links.length > 0 && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Liens</h4>
+                    <div className="mt-2 flex flex-wrap gap-3">
+                      {links.map((l, i) => {
+                        const isExternal = l.external ?? /^https?:\/\//i.test(l.href);
+                        const type = l.type || (
+                          /github\.com/i.test(l.href)
+                            ? 'github'
+                            : /\.pdf$/i.test(l.href)
+                            ? 'pdf'
+                            : /\.(png|jpe?g|gif|webp|svg)$/i.test(l.href)
+                            ? 'image'
+                            : isExternal
+                            ? 'external'
+                            : 'website'
+                        );
+
+                        const Icon =
+                          type === 'github' ? Github :
+                          type === 'pdf' ? FileText :
+                          type === 'image' ? ImageIcon :
+                          type === 'external' ? ExternalLink :
+                          LinkIcon;
+
+                        return (
+                          <a
+                            key={`link-${i}`}
+                            href={l.href}
+                            target={isExternal ? '_blank' : undefined}
+                            rel={isExternal ? 'noopener noreferrer' : undefined}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          >
+                            <Icon className="w-4 h-4" />
+                            {l.label}
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           </div>

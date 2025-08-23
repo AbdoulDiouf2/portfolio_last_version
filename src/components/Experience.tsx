@@ -13,6 +13,8 @@ interface TimelineItem {
   description: string[];
   icon: JSX.Element;
   illustration?: string; // URL de l'image d'illustration (optionnelle)
+  skills?: string[]; // Badges de compétences
+  links?: { label: string; href: string; external?: boolean; type?: 'github' | 'pdf' | 'website' | 'external' | 'image' | 'doc' }[]; // CTA
 }
 
 export default function Experience() {
@@ -59,7 +61,16 @@ export default function Experience() {
         "- Visualisation de graphes et traçabilité",
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_sonatel.jpg", // Chemin vers l'image dans le dossier public
+      skills: ['Cloudera', 'Hadoop', 'HDFS', 'NiFi', 'Oozie', 'Spark', 'Scala', 'Python', 'SQL', 'Elasticsearch', 'Grafana', 'React', 'REST', 'LLM', 'Neo4j'],
+      links: [
+        { label: 'Voir le logo', href: 'Images/logo_sonatel.jpg', type: 'image' },
+        // EXEMPLES (désactiver le commentaire pour activer):
+        // { label: 'Site officiel', href: 'https://sonatel.sn', external: true, type: 'website' },
+        // { label: 'Documentation (PDF)', href: 'Documents/catalog-lineage.pdf', external: true, type: 'pdf' },
+        // { label: 'Repo GitHub (exemple)', href: 'https://github.com/votre-org/data-lineage', external: true, type: 'github' },
+        // { label: 'Logo alternatif', href: 'Images/sonatel_alt.png', type: 'image' },
+      ]
     },
     {
       id: 2,
@@ -80,7 +91,16 @@ export default function Experience() {
         "- Réduction du temps de préparation des rapports",
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/dalkia.jpg", // Chemin vers l'image dans le dossier public
+      skills: ['GMAO', 'Looker Studio', 'Automatisation', 'Macros', 'KPI', 'Data Visualization', 'Reporting'],
+      links: [
+        { label: 'Voir l’illustration', href: 'Images/dalkia.jpg', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Site Dalkia', href: 'https://www.dalkia.fr', external: true, type: 'website' },
+        // { label: 'Rapport KPI (PDF)', href: 'Documents/dalkia_kpi.pdf', external: true, type: 'pdf' },
+        // { label: 'Dashboard (exemple)', href: 'https://lookerstudio.google.com/', external: true, type: 'external' },
+        // { label: 'Illustration alternative', href: 'Images/dalkia_alt.png', type: 'image' },
+      ]
     },
     {
       id: 3,
@@ -95,7 +115,15 @@ export default function Experience() {
         "- Support aux opérations logistiques",
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "Images/poste.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/poste.jpg", // Chemin vers l'image dans le dossier public
+      skills: ['Tri automatisé', 'Manutention', 'Organisation', 'Logistique', 'Rigueur'],
+      links: [
+        { label: 'Voir l’illustration', href: 'Images/poste.jpg', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Site La Poste', href: 'https://www.laposte.fr', external: true, type: 'website' },
+        // { label: 'Fiche de poste (PDF)', href: 'Documents/la_poste_fiche.pdf', external: true, type: 'pdf' },
+        // { label: 'Illustration alternative', href: 'Images/poste_alt.png', type: 'image' },
+      ]
     },
     {
       id: 4,
@@ -110,7 +138,15 @@ export default function Experience() {
         "- Contribution à l'élaboration de rapports",
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_sonatel.jpg", // Chemin vers l'image dans le dossier public
+      skills: ['Opérations internationales', 'KPI', 'Reporting', 'Communication', 'Organisation'],
+      links: [
+        { label: 'Voir le logo', href: 'Images/logo_sonatel.jpg', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Site Orange SN', href: 'https://www.orange.sn', external: true, type: 'website' },
+        // { label: 'Rapport DOI (PDF)', href: 'Documents/orange_doi.pdf', external: true, type: 'pdf' },
+        // { label: 'Illustration alternative', href: 'Images/orange_doi_alt.png', type: 'image' },
+      ]
     },
     {
       id: 5,
@@ -126,7 +162,15 @@ export default function Experience() {
         "- Support bureautique aux utilisateurs",
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_sonatel.jpg", // Chemin vers l'image dans le dossier public
+      skills: ['Support IT', 'Configuration postes', 'BitLocker', 'Maintenance', 'Dépannage'],
+      links: [
+        { label: 'Voir le logo', href: 'Images/logo_sonatel.jpg', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Site Orange SN', href: 'https://www.orange.sn', external: true, type: 'website' },
+        // { label: 'Procédure BitLocker (PDF)', href: 'Documents/bitlocker_procedure.pdf', external: true, type: 'pdf' },
+        // { label: 'Illustration alternative', href: 'Images/orange_dsi_alt.png', type: 'image' },
+      ]
     },
     {
       id: 6,
@@ -143,7 +187,16 @@ export default function Experience() {
         "- Restitution devant un jury professionnel",
       ],
       icon: <Award className="w-6 h-6" />,
-      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png", // Chemin vers l'image dans le dossier public
+      skills: ['Prototypage', 'Innovation', 'Travail en équipe', 'Santé'],
+      links: [
+        { label: 'Voir le logo', href: 'Images/logo_esigelec.png', type: 'image' },
+        // EXEMPLES:
+        // { label: "Site de l'événement", href: 'https://www.esigelec.fr', external: true, type: 'website' },
+        // { label: 'Pitch Deck (PDF)', href: 'Documents/mikana_pitch.pdf', external: true, type: 'pdf' },
+        // { label: 'Repo GitHub (exemple)', href: 'https://github.com/votre-org/mikana', external: true, type: 'github' },
+        // { label: 'Illustration alternative', href: 'Images/mikana_alt.png', type: 'image' },
+      ]
     },
     {
       id: 7,
@@ -158,7 +211,16 @@ export default function Experience() {
         "- Conception du pipeline d'analyse et préparation des données",
       ],
       icon: <Code className="w-6 h-6" />,
-      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png", // Chemin vers l'image dans le dossier public
+      skills: ['Analyse vidéo', 'Traitement d’images', 'R&D', 'Data'],
+      links: [
+        { label: 'Voir le logo', href: 'Images/logo_esigelec.png', type: 'image' },
+        // EXEMPLES:
+        // { label: "Site ESIGELEC", href: 'https://www.esigelec.fr', external: true, type: 'website' },
+        // { label: 'Rapport (PDF)', href: 'Documents/approche_metier_aviron.pdf', external: true, type: 'pdf' },
+        // { label: 'Repo GitHub (exemple)', href: 'https://github.com/votre-org/aviron-analyse-video', external: true, type: 'github' },
+        // { label: 'Vidéo démo', href: 'https://www.youtube.com/', external: true, type: 'external' },
+      ]
     },
     {
       id: 8,
@@ -173,7 +235,16 @@ export default function Experience() {
         "- Gestion des utilisateurs et des parties",
       ],
       icon: <Code className="w-6 h-6" />,
-      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png", // Chemin vers l'image dans le dossier public
+      skills: ['Application web', 'Gestion utilisateurs', 'Frontend', 'UI'],
+      links: [
+        { label: 'Voir le logo', href: 'Images/logo_esigelec.png', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Site ESIGELEC', href: 'https://www.esigelec.fr', external: true, type: 'website' },
+        // { label: 'Spécifications (PDF)', href: 'Documents/boardgames_specs.pdf', external: true, type: 'pdf' },
+        // { label: 'Repo GitHub', href: 'https://github.com/votre-org/boardgames-app', external: true, type: 'github' },
+        // { label: 'Capture d’écran', href: 'Images/boardgames_screenshot.png', type: 'image' },
+      ]
     },
     {
       id: 9,
@@ -189,7 +260,16 @@ export default function Experience() {
         "- Tableau de bord pour les responsables",
       ],
       icon: <Code className="w-6 h-6" />,
-      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png", // Chemin vers l'image dans le dossier public
+      skills: ['Application web', 'Reporting', 'Tableau de bord', 'Data'],
+      links: [
+        { label: 'Voir le logo', href: 'Images/logo_esigelec.png', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Site ESIGELEC', href: 'https://www.esigelec.fr', external: true, type: 'website' },
+        // { label: 'Cahier des charges (PDF)', href: 'Documents/gestion_absences_cdc.pdf', external: true, type: 'pdf' },
+        // { label: 'Repo GitHub', href: 'https://github.com/votre-org/absence-manager', external: true, type: 'github' },
+        // { label: 'Capture d’écran', href: 'Images/absences_dashboard.png', type: 'image' },
+      ]
     },
     {
       id: 10,
@@ -205,7 +285,16 @@ export default function Experience() {
         "- Démonstration et soutenance",
       ],
       icon: <Code className="w-6 h-6" />,
-      illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
+      illustration: "Images/logo_esigelec.png", // Chemin vers l'image dans le dossier public
+      skills: ['Gestion de projet', 'Travail en équipe', 'Innovation'],
+      links: [
+        { label: 'Voir le logo', href: 'Images/logo_esigelec.png', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Site ESIGELEC', href: 'https://www.esigelec.fr', external: true, type: 'website' },
+        // { label: 'Dossier PIC (PDF)', href: 'Documents/pic_dossier.pdf', external: true, type: 'pdf' },
+        // { label: 'Repo GitHub', href: 'https://github.com/votre-org/pic', external: true, type: 'github' },
+        // { label: 'Photos projet', href: 'Images/pic_photos.png', type: 'image' },
+      ]
     },
     {
       id: 11,
@@ -219,7 +308,15 @@ export default function Experience() {
         "- Réaction en situation d'urgence",
       ],
       icon: <Award className="w-6 h-6" />,
-      illustration: "Images/Certificat_PSC1.jpg"
+      illustration: "Images/Certificat_PSC1.jpg",
+      skills: ['Premiers secours', 'Gestion d’urgence'],
+      links: [
+        { label: 'Voir le certificat', href: 'Images/Certificat_PSC1.jpg', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Programme PSC1', href: 'https://www.interieur.gouv.fr', external: true, type: 'website' },
+        // { label: 'Certificat (PDF)', href: 'Documents/PSC1_certificat.pdf', external: true, type: 'pdf' },
+        // { label: 'Autre scan', href: 'Images/PSC1_alt.png', type: 'image' },
+      ]
     },
     {
       id: 12,
@@ -238,7 +335,16 @@ export default function Experience() {
         "- Génération de PDF, tableaux de bord, suivi client, gestion documentaire",
       ],
       icon: <Briefcase className="w-6 h-6" />,
-      illustration: "Images/touba-aviation.png" // à placer dans le dossier public
+      illustration: "Images/touba-aviation.png", // à placer dans le dossier public
+      skills: ['React', 'Vite', 'TailwindCSS', 'Express.js', 'Supabase', 'PostgreSQL', 'Auth', 'Storage', 'JWT'],
+      links: [
+        { label: 'Voir l’illustration', href: 'Images/touba-aviation.png', type: 'image' },
+        // EXEMPLES:
+        // { label: 'Site (exemple)', href: 'https://www.touba-aviation.com', external: true, type: 'website' },
+        // { label: 'Documentation (PDF)', href: 'Documents/touba_aviation_doc.pdf', external: true, type: 'pdf' },
+        // { label: 'Repo GitHub (privé/exemple)', href: 'https://github.com/votre-org/touba-aviation', external: true, type: 'github' },
+        // { label: 'Mockup UI', href: 'Images/touba-aviation_mockup.png', type: 'image' },
+      ]
     },
   ];
 
@@ -317,6 +423,8 @@ export default function Experience() {
     flushList('end');
     return <div className="space-y-2">{elements}</div>;
   };
+
+  const selected = selectedItem !== null ? timelineItems.find(item => item.id === selectedItem) : undefined;
 
   return (
     <section id="experience" className="py-20 section-bg">
@@ -403,10 +511,12 @@ export default function Experience() {
         <Modal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
-          title={selectedItem !== null ? timelineItems.find(item => item.id === selectedItem)?.title || '' : ''}
-          illustration={selectedItem !== null ? timelineItems.find(item => item.id === selectedItem)?.illustration : undefined}
+          title={selected?.title || ''}
+          illustration={selected?.illustration}
+          skills={selected?.skills}
+          links={selected?.links}
         >
-          {selectedItem !== null && renderDescription(timelineItems.find(item => item.id === selectedItem)?.description || [])}
+          {selected && renderDescription(selected.description)}
         </Modal>
       </div>
     </section>
