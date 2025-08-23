@@ -46,7 +46,7 @@ export default function Hero() {
             <div className="flex flex-col items-center md:items-start gap-4 animate-fade-in-delayed">
               <div className="flex items-center relative">  
                 <a
-                  href="/portfolio_last_version/Documents/CV_AAMD_Alternance_BAC+6.pdf"
+                  href="/Documents/CV_AAMD_Alternance_BAC+6.pdf"
                   download="CV_AbdoulAhadMbackeDiouf.pdf"
                   target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium py-2 px-4 rounded-lg hover:opacity-90 transition-opacity"
