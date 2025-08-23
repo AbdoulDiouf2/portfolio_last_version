@@ -28,39 +28,35 @@ export default function Experience() {
       organization: "ORANGE SONATEL – Pôle Data",
       date: "05 mai 2025 - 04 septembre 2025",
       description: [
-        "🔹 Description des missions",
-        "Dans le cadre de mon stage au sein du pôle Data, je travaille sur deux projets structurants visant à optimiser la gestion des métadonnées et à assurer la traçabilité des données :",
+        "Description des missions:",
+        "Conception et développement de deux solutions visant à optimiser la gestion des métadonnées et la traçabilité des données.",
         "",
-        "Mise en place d'un outil de cataloguage de données :",
-        "Remplacement d'un fichier Excel manuel par une application intelligente et interactive permettant de centraliser, automatiser et enrichir la documentation des tables créées dans les bases de données \"refined\". Cet outil :",
-        "- détecte automatiquement les nouvelles tables créées via les logs ou métadonnées HDFS ;",
-        "- récupère les métadonnées depuis Cloudera, Elasticsearch et Grafana ;",
-        "- génère des descriptions sémantiques grâce à un LLM basé sur les noms des tables et colonnes ;",
-        "- propose une interface web moderne pour l'affichage et l'édition des informations.",
+        "Outil de Data Catalog:",
+        "- Remplacement d'un suivi Excel par une application web permettant de centraliser et automatiser la documentation des tables refined",
+        "- Détection automatique des nouvelles tables via logs/métadonnées HDFS",
+        "- Récupération des métadonnées depuis Cloudera, Elasticsearch et Grafana",
+        "- Génération de descriptions sémantiques (LLM) à partir des noms de tables et colonnes",
         "",
-        "Développement d'un outil de Data Lineage visuel :",
-        "Conception d'un système permettant de représenter graphiquement les dépendances entre tables issues des bases \"trusted\", \"refined\" et \"reposting\". Cet outil permet :",
-        "- d'identifier toutes les tables impactées en cas de modification dans les données sources ;",
-        "- de visualiser les flux de transformation sous forme de graphe interactif, à la manière de Neo4j ;",
-        "- d'assurer une meilleure gouvernance des données et un suivi clair des impacts.",
+        "Outil de Data Lineage:",
+        "- Visualisation des dépendances entre tables (trusted, refined, reposting)",
+        "- Identification des impacts en cas de modification des sources",
+        "- Graphe interactif facilitant la gouvernance des données",
         "",
-        "🔹 Technologies et outils utilisés / explorés",
-        "- Big Data : Cloudera (Hadoop, HDFS, NiFi, Oozie), Apache Spark (Scala / Python)",
-        "- Base de données : Elasticsearch, HDFS, bases relationnelles",
-        "- Observabilité & monitoring : Grafana",
-        "- Langages : Python, Scala, SQL",
-        "- Développement d'interfaces : React.js (ou autre framework web selon validation), REST APIs",
-        "- IA/LLM : Intégration d'un modèle de langage pour la génération automatique de descriptions",
-        "- Visualisation : Neo4j (ou alternative pour la représentation de graphes)",
-        "- Méthodologie : Conception d'un cahier des charges détaillé, développement agile et itératif",
+        "Technologies et outils:",
+        "- Big Data: Cloudera (Hadoop, HDFS, NiFi, Oozie), Apache Spark (Scala / Python)",
+        "- Bases: Elasticsearch, HDFS, bases relationnelles",
+        "- Observabilité: Grafana",
+        "- Langages: Python, Scala, SQL",
+        "- Frontend/Backend: React.js, REST APIs",
+        "- IA / LLM: génération automatique de descriptions",
+        "- Visualisation: Neo4j (ou alternative)",
         "",
-        "🔹 Compétences acquises / développées",
-        "- Conception d'architectures Big Data et compréhension des pipelines de traitement",
+        "Compétences développées:",
+        "- Conception d'architectures Big Data et compréhension des pipelines",
         "- Automatisation de la documentation et gouvernance des données",
-        "- Intégration de LLM dans des cas concrets d'entreprise",
-        "- Développement web full-stack (backend Spark + frontend React)",
-        "- Visualisation avancée de graphes et gestion de la traçabilité des données",
-        "- Esprit d'analyse, structuration de projet, rédaction de cahier des charges technique"
+        "- Intégration de LLM dans des cas d'usage entreprise",
+        "- Développement web full-stack",
+        "- Visualisation de graphes et traçabilité",
       ],
       icon: <Briefcase className="w-6 h-6" />,
       illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
@@ -72,12 +68,16 @@ export default function Experience() {
       organization: "DALKIA EN",
       date: "08 avril 2024 - 04 octobre 2024",
       description: [
-        "- Développement de la Gestion de Maintenance Assistée par Ordinateur (GMAO)",
-        "- Création de rapports sur Looker Studio (Collecte, traitement et analyse des données)",
+        "Missions:",
+        "- Participation au développement de la GMAO",
+        "- Conception de rapports analytiques sur Looker Studio (collecte, traitement, analyse)",
         "- Optimisation des scripts d'import de données",
-        "- Mise en place de macros pour automatiser certaines taches de l’équipe pilotage",
-        "- Travail sur la mise à disposition d’un suivi automatique de calcul de performance des prestataires (KPI)",
-        "- Création d’outils de visualisation pour optimiser les méthodes des opérationnels"
+        "- Automatisation de tâches via macros pour l'équipe pilotage",
+        "- Mise en place d'indicateurs de performance (KPI) des prestataires",
+        "- Création d'outils de visualisation pour les opérationnels",
+        "Résultats:",
+        "- Amélioration de la fiabilité du reporting",
+        "- Réduction du temps de préparation des rapports",
       ],
       icon: <Briefcase className="w-6 h-6" />,
       illustration: "Images/dalkia.jpg" // Chemin vers l'image dans le dossier public
@@ -89,9 +89,10 @@ export default function Experience() {
       organization: "La POSTE - PIC de Rouen Madrillet",
       date: "Juin 2023 - Juillet 2023",
       description: [
-        "Triage du courrier automatisé",
-        "Manutention",
-        "Gestion logistique"
+        "Missions:",
+        "- Triage automatisé du courrier",
+        "- Manutention et organisation des flux",
+        "- Support aux opérations logistiques",
       ],
       icon: <Briefcase className="w-6 h-6" />,
       illustration: "Images/poste.jpg" // Chemin vers l'image dans le dossier public
@@ -103,9 +104,10 @@ export default function Experience() {
       organization: "Orange Sénégal",
       date: "Juillet 2022 - Août 2022",
       description: [
-        "Assistance à la gestion des opérations internationales",
-        "Suivi des indicateurs de performance",
-        "Participation à l'élaboration de rapports"
+        "Missions:",
+        "- Appui à la gestion des opérations internationales",
+        "- Suivi des indicateurs de performance",
+        "- Contribution à l'élaboration de rapports",
       ],
       icon: <Briefcase className="w-6 h-6" />,
       illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
@@ -117,10 +119,11 @@ export default function Experience() {
       organization: "Orange Sénégal",
       date: "Juillet 2021 - Août 2021",
       description: [
-        "Configuration de machines",
-        "Activation de BitLocker",
-        " Maintenance et dépannage des machines",
-        "Support bureautique"
+        "Missions:",
+        "- Configuration de postes de travail",
+        "- Activation et gestion de BitLocker",
+        "- Maintenance et dépannage des machines",
+        "- Support bureautique aux utilisateurs",
       ],
       icon: <Briefcase className="w-6 h-6" />,
       illustration: "Images/logo_sonatel.jpg" // Chemin vers l'image dans le dossier public
@@ -132,9 +135,12 @@ export default function Experience() {
       organization: "ESIGELEC",
       date: "17 octobre 2024 - 18 octobre 2024",
       description: [
-        "Développement d'une solution innovante pour la santé",
-        "Collaboration avec des étudiants et professionnels de divers domaines",
-        "Présentation du projet devant un jury de professionnels"
+        "Objectif:",
+        "- Proposer une solution innovante dans le domaine de la santé",
+        "Contributions:",
+        "- Développement rapide d'un prototype",
+        "- Travail en équipe pluridisciplinaire",
+        "- Restitution devant un jury professionnel",
       ],
       icon: <Award className="w-6 h-6" />,
       illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
@@ -146,7 +152,10 @@ export default function Experience() {
       organization: "ESIGELEC",
       date: "27 Novembre 2024 - 29 novembre 2024",
       description: [
-        "Développement d'un outil d'analyse vidéo pour l'optimisation de la technique d'aviron"
+        "Objectif:",
+        "- Développer un outil d'analyse vidéo pour l'optimisation de la technique d'aviron",
+        "Rôle:",
+        "- Conception du pipeline d'analyse et préparation des données",
       ],
       icon: <Code className="w-6 h-6" />,
       illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
@@ -158,7 +167,10 @@ export default function Experience() {
       organization: "ESIGELEC",
       date: "24 novembre 2023 - 01 décembre 2023",
       description: [
-        ""
+        "Objectif:",
+        "- Créer une application web de gestion de jeux de plateau",
+        "Fonctionnalités:",
+        "- Gestion des utilisateurs et des parties",
       ],
       icon: <Code className="w-6 h-6" />,
       illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
@@ -170,9 +182,11 @@ export default function Experience() {
       organization: "ESIGELEC",
       date: "7 mars 2023 - 22 mai 2023",
       description: [
-        "Développement d'une application web pour la gestion des absences",
-        "Intégration de fonctionnalités de suivi et de reporting",
-        "Collaboration avec une équipe de développeurs"
+        "Objectif:",
+        "- Développer une application web de gestion des absences",
+        "Fonctionnalités:",
+        "- Suivi des absences et génération de rapports",
+        "- Tableau de bord pour les responsables",
       ],
       icon: <Code className="w-6 h-6" />,
       illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
@@ -184,7 +198,11 @@ export default function Experience() {
       organization: "ESIGELEC",
       date: "26 novembre 2022 - 7 mai 2023",
       description: [
-        ""
+        "Objectif:",
+        "- Mener un projet innovant en équipe dans un cadre académique",
+        "Contributions:",
+        "- Cadrage, répartition des tâches, suivi",
+        "- Démonstration et soutenance",
       ],
       icon: <Code className="w-6 h-6" />,
       illustration: "Images/logo_esigelec.png" // Chemin vers l'image dans le dossier public
@@ -196,7 +214,9 @@ export default function Experience() {
       organization: "Fédération Nationale des Métiers de la Natation et du Sport",
       date: "03/12/2022",
       description: [
-        ""
+        "Compétences attestées:",
+        "- Gestes de premier secours",
+        "- Réaction en situation d'urgence",
       ],
       icon: <Award className="w-6 h-6" />,
       illustration: "Images/Certificat_PSC1.jpg"
@@ -208,17 +228,18 @@ export default function Experience() {
       organization: "Touba Aviation & Tours",
       date: "Freelance - Début du projet : Mai 2025",
       description: [
-        "- Conception et développement d'une plateforme complète pour une agence de voyages et de services internationaux",
-        "- Création d’un site client public pour la soumission de demandes de services (React, Vite, TailwindCSS)",
-        "- Développement d’un panneau d’administration sécurisé pour la gestion interne (React, Vite, Auth)",
-        "- Mise en place d’un backend via Supabase (PostgreSQL, Auth, Storage) et Express.js",
-        "- Intégration de fonctionnalités clés : génération de PDF, tableaux de bord, suivi client, gestion documentaire",
-        "- Déploiement multi-environnements (Netlify, VPS) avec configurations de sécurité (HTTPS, JWT)"
+        "Objectif:",
+        "- Concevoir et développer une plateforme complète pour la gestion des demandes clients et l'administration interne",
+        "Architecture & Tech:",
+        "- Frontend: React, Vite, TailwindCSS",
+        "- Backend: Express.js, Supabase (PostgreSQL, Auth, Storage)",
+        "- Sécurité & déploiement: HTTPS, JWT, Netlify/VPS",
+        "Fonctionnalités clés:",
+        "- Génération de PDF, tableaux de bord, suivi client, gestion documentaire",
       ],
       icon: <Briefcase className="w-6 h-6" />,
       illustration: "Images/touba-aviation.png" // à placer dans le dossier public
-    }
-    
+    },
   ];
 
   // Optimisation: Mémoriser le filtrage des items
@@ -245,6 +266,57 @@ export default function Experience() {
     setModalOpen(false);
     setSelectedItem(null);
   }, []);
+
+  // Rendu professionnel des descriptions: titres (finissant par ':'), listes (lignes commençant par '- '), paragraphes
+  const renderDescription = (desc: string[]) => {
+    const elements: React.ReactNode[] = [];
+    let listBuffer: string[] = [];
+
+    const flushList = (key: string) => {
+      if (listBuffer.length) {
+        elements.push(
+          <ul key={`ul-${key}`} className="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+            {listBuffer.map((item, i) => (
+              <li key={`li-${key}-${i}`}>{item}</li>
+            ))}
+          </ul>
+        );
+        listBuffer = [];
+      }
+    };
+
+    desc.forEach((raw, idx) => {
+      const line = raw.trim();
+      const key = `${idx}`;
+      if (!line) {
+        flushList(key);
+        elements.push(<div key={`sp-${key}`} className="h-2" />);
+        return;
+      }
+      if (line.startsWith('- ')) {
+        listBuffer.push(line.slice(2));
+        return;
+      }
+      if (line.endsWith(':')) {
+        flushList(key);
+        elements.push(
+          <h4 key={`h-${key}`} className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-4">
+            {line.slice(0, -1)}
+          </h4>
+        );
+        return;
+      }
+      flushList(key);
+      elements.push(
+        <p key={`p-${key}`} className="text-gray-700 dark:text-gray-300">
+          {line}
+        </p>
+      );
+    });
+
+    flushList('end');
+    return <div className="space-y-2">{elements}</div>;
+  };
 
   return (
     <section id="experience" className="py-20 section-bg">
@@ -334,13 +406,7 @@ export default function Experience() {
           title={selectedItem !== null ? timelineItems.find(item => item.id === selectedItem)?.title || '' : ''}
           illustration={selectedItem !== null ? timelineItems.find(item => item.id === selectedItem)?.illustration : undefined}
         >
-          {selectedItem !== null && (
-            <div className="space-y-4">
-              {timelineItems.find(item => item.id === selectedItem)?.description.map((desc, index) => (
-                <p key={index} className="text-gray-600 dark:text-gray-300">{desc}</p>
-              ))}
-            </div>
-          )}
+          {selectedItem !== null && renderDescription(timelineItems.find(item => item.id === selectedItem)?.description || [])}
         </Modal>
       </div>
     </section>
