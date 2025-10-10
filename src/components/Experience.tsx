@@ -435,7 +435,7 @@ export default function Experience() {
         </h2>
 
         {/* Filtres */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {filterButtons.map((button) => (
             <motion.button
               key={button.type}
@@ -456,7 +456,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Ligne verticale */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-600 to-purple-600" />
+          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-600 to-purple-600" />
 
           {/* Items */}
           <div className="space-y-12">
@@ -469,11 +469,11 @@ export default function Experience() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   className={`relative flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
                   {/* Point sur la timeline */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2">
+                  <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2">
                     <motion.div
                       className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"
                       whileHover={{ scale: 1.5 }}
@@ -483,7 +483,7 @@ export default function Experience() {
 
                   {/* Contenu */}
                   <motion.div
-                    className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}
+                    className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'} pl-12`}
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="card p-6 cursor-pointer" onClick={() => handleItemClick(item.id)}>
