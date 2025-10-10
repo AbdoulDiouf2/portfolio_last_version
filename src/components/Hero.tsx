@@ -4,7 +4,7 @@ import HeroBackground3D from './HeroBackground3D';
 
 export default function Hero() {
   return (
-    <section id="home" className="h-screen flex flex-col justify-center items-center px-4 md:px-8 lg:px-16 relative overflow-hidden bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <section id="home" className="min-h-screen flex flex-col items-center px-4 md:px-8 lg:px-16 relative overflow-hidden bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 pt-32 pb-12">
       <HeroBackground3D />
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 animate-float">
@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row items-center md:space-x-12">
           {/* Photo de profil */}
           <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <div className="w-full h-auto max-h-[300px] md:max-h-[600px] overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-0">
+            <div className="w-full h-auto max-h-[350px] md:max-h-[600px] overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-0">
               <img
                 src="Images/profil_abdoul.jpg"
                 alt="Abdoul Ahad Mbacké Diouf"
