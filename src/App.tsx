@@ -14,9 +14,6 @@ import ReactGA from 'react-ga4';
 
 function App() {
   useEffect(() => {
-    // Set default theme to dark mode
-    document.documentElement.classList.add('dark');
-    
     // Envoyer un événement de page vue à Google Analytics
     ReactGA.send({ hitType: "pageview", page: window.location.pathname });
     

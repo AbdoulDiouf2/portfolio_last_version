@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Github, Linkedin, MapPin } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, MapPin, Briefcase } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
@@ -152,6 +152,11 @@ export default function Contact() {
             <div className="mt-8">
               <h4 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Réseaux sociaux</h4>
               <div className="flex space-x-4">
+                <SocialLink
+                  href="https://maadec.vercel.app/"
+                  icon={<Briefcase className="w-6 h-6" />}
+                  label="MAADEC"
+                />
                 <SocialLink
                   href="https://github.com/AbdoulDiouf2"
                   icon={<Github className="w-6 h-6" />}

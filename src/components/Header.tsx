@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Phone, Briefcase } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -101,6 +101,9 @@ export default function Header() {
 
 const SocialLinks = () => (
   <div className="flex items-center space-x-4">
+    <a href="https://maadec.vercel.app/" target="_blank" rel="noopener noreferrer" title="MAADEC" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
+      <Briefcase size={20} />
+    </a>
     <a href="https://github.com/AbdoulDiouf2" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
       <Github size={20} />
     </a>
