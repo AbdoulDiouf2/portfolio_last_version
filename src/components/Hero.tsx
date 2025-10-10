@@ -54,8 +54,8 @@ export default function Hero() {
                   <Download className="w-5 h-5" /> Télécharger le CV
                 </a>
                 <div className="relative ml-2 group">
-                  <div className="w-6 h-6 rounded-full bg-transparent border border-white flex items-center justify-center cursor-help">
-                    <span className="text-white font-bold text-xs">!</span>
+                  <div className="w-6 h-6 rounded-full bg-transparent border border-gray-800 dark:border-white flex items-center justify-center cursor-help">
+                    <span className="text-gray-800 dark:text-white font-bold text-xs">!</span>
                   </div>
                   <div className="absolute left-1/2 bottom-full mb-2 -translate-x-1/2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 w-max max-w-xs">
                     <div className="bg-gray-800 text-white text-sm rounded-lg py-2 px-3 shadow-lg">

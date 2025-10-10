@@ -196,10 +196,10 @@ const ContactItem = ({
         {icon}
       </div>
       <div>
-        <h4 className="font-medium text-gray-200 dark:text-gray-200">{title}</h4>
+        <h4 className="font-medium text-gray-800 dark:text-gray-200">{title}</h4>
         <ContentWrapper 
           {...props} 
-          className={`text-gray-300 dark:text-gray-300 mt-1 ${href ? 'hover:text-blue-500 dark:hover:text-blue-400 transition-colors' : ''}`}
+          className={`text-gray-600 dark:text-gray-300 mt-1 ${href ? 'hover:text-blue-500 dark:hover:text-blue-400 transition-colors' : ''}`}
         >
           {content}
         </ContentWrapper>
@@ -221,7 +221,7 @@ const SocialLink = ({
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-3 bg-gray-50 rounded-full text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
+    className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-600 transition-colors duration-300"
     aria-label={label}
   >
     {icon}
