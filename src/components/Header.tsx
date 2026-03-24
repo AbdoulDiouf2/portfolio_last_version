@@ -39,7 +39,7 @@ export default function Header() {
       style={{ background: 'var(--color-bg)', borderBottom: '1px solid var(--color-border)' }}
       className="fixed w-full top-0 z-50"
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-3 md:py-3 lg:py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <a
@@ -58,8 +58,8 @@ export default function Header() {
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <div className="flex gap-6">
+          <div className="hidden md:flex items-center gap-4 lg:gap-8">
+            <div className="flex gap-4 lg:gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -68,7 +68,7 @@ export default function Header() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     color: 'var(--color-text-muted)',
-                    fontSize: '0.875rem',
+                    fontSize: '0.8rem',
                     textDecoration: 'none',
                     transition: 'color 0.2s'
                   }}
@@ -99,7 +99,9 @@ export default function Header() {
               <span style={{ color: lang === 'en' ? 'var(--color-accent-gold)' : 'var(--color-text-muted)' }}>EN</span>
             </button>
 
-            <SocialLinks />
+            <div className="hidden lg:flex">
+              <SocialLinks />
+            </div>
           </div>
 
           {/* Mobile hamburger */}
