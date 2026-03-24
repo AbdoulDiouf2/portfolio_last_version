@@ -14,12 +14,6 @@ const journey = [
     phaseKey: "about.phases.engineering",
     description: "Diplôme d'ingénieur Big Data — ESIGELEC",
   },
-  {
-    location: "Gif-sur-Yvette, France",
-    period: "2025 →",
-    phaseKey: "about.phases.master",
-    description: "Mastère spécialisé IA & Data Science",
-  },
 ];
 
 const education = [
