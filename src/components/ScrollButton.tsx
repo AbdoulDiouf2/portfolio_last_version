@@ -56,8 +56,17 @@ export default function ScrollButton() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={handleClick}
-      className="fixed right-6 bottom-[9rem] z-40 p-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow duration-300 pointer-events-auto opacity-50 hover:opacity-100" 
-      style={{ pointerEvents: showButton ? 'auto' : 'none' }}
+      className="fixed right-6 z-40"
+      style={{
+        bottom: '5rem',
+        pointerEvents: showButton ? 'auto' : 'none',
+        background: 'transparent',
+        border: '1px solid var(--color-border)',
+        borderRadius: '4px',
+        padding: '10px',
+        color: 'var(--color-text-muted)',
+        cursor: 'pointer'
+      }}
       aria-label={isAtTop ? "Défiler vers le bas" : "Remonter en haut"}
     >
       {isAtTop ? <ArrowDown className="w-6 h-6" /> : <ArrowUp className="w-6 h-6" />}

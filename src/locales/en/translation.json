@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Academic Projects",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "index": "01 —",
+    "accroche": "IT Consultant · MAADEC Founder · Backend, Big Data & Infrastructure",
+    "cta": "See my projects"
+  },
+  "about": {
+    "title": "About",
+    "journey_title": "Geographic journey",
+    "philosophy_title": "Philosophy",
+    "interests_title": "Interests",
+    "education_title": "Education",
+    "profile_title": "Profile",
+    "download_cv": "Download CV",
+    "cv_updated": "CV last updated 10/10/2025",
+    "phases": {
+      "initial": "Initial education",
+      "engineering": "Big Data Engineering",
+      "master": "AI Master's"
+    },
+    "values": {
+      "innovation": "Innovation",
+      "innovation_desc": "Always seeking creative solutions to complex challenges",
+      "sustainability": "Sustainability",
+      "sustainability_desc": "Building tech solutions that respect the environment",
+      "collaboration": "Collaboration",
+      "collaboration_desc": "Believing in the power of teamwork and knowledge sharing",
+      "excellence": "Excellence",
+      "excellence_desc": "Aiming for quality in every project and every line of code"
+    },
+    "interests": {
+      "data_ai": "Data & Artificial Intelligence",
+      "tech": "Emerging Technologies",
+      "web": "Web Development",
+      "gis": "GIS & Geomatics",
+      "sports": "Sports & Leisure",
+      "opensource": "Open Source Culture"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Tech stack & tools",
+    "filter_all": "All",
+    "filter_programming": "Programming",
+    "filter_data": "Big Data",
+    "filter_dev": "Development",
+    "filter_tools": "Tools",
+    "level_beginner": "Beginner",
+    "level_intermediate": "Intermediate",
+    "level_advanced": "Advanced",
+    "level_expert": "Expert",
+    "qualities_title": "Personal qualities"
+  },
+  "experience": {
+    "title": "Experience",
+    "filter_all": "All",
+    "filter_work": "Internships",
+    "filter_projects": "Projects",
+    "filter_education": "Education",
+    "filter_freelance": "Freelance",
+    "see_details": "See details",
+    "close": "Close"
+  },
+  "education": {
+    "title": "Academic Projects"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Case studies & deliverables",
+    "in_progress": "In progress",
+    "anonymous_client": "Anonymous client",
+    "github_soon": "GitHub coming soon",
+    "see_github": "View on GitHub",
+    "see_demo": "View demo"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent successfully.",
+    "error": "Error sending message. Please try again.",
+    "location": "Saint-Etienne-Du-Rouvray, France",
+    "see_map": "View on Maps"
+  },
+  "cta": {
+    "title": "Got a project in mind?",
+    "subtitle": "Let's talk. I'm available for freelance missions in backend, infrastructure and web.",
+    "button": "Get in touch"
+  },
+  "chatbot": {
+    "title": "Assistant",
+    "subtitle": "Online",
+    "placeholder": "Ask a question...",
+    "greeting": "Hello! I'm Abdoul Ahad's assistant. How can I help you?",
+    "fallback": "I didn't understand your question. You can ask me about Abdoul Ahad's education, experience, skills or projects."
+  }
+}

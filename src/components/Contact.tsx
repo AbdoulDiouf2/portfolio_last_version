@@ -1,229 +1,189 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Phone, Github, Linkedin, MapPin, Briefcase } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const { t } = useTranslation();
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-
     try {
       await emailjs.send(
-        'service_qnm7e7x', // Vous devrez remplacer ceci par votre Service ID EmailJS
-        'template_6ttxhkq', // Vous devrez remplacer ceci par votre Template ID EmailJS
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: 'aad.mbacke691@gmail.com',
-        },
-        'l4eGBb6GgLVODJBOf' // Vous devrez remplacer ceci par votre Public Key EmailJS
+        'service_qnm7e7x',
+        'template_6ttxhkq',
+        { from_name: formData.name, from_email: formData.email, message: formData.message, to_email: 'aad.mbacke691@gmail.com' },
+        'l4eGBb6GgLVODJBOf'
       );
-      
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch {
       setStatus('error');
-      console.error('Error sending email:', error);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.id]: e.target.value
-    }));
+    setFormData(prev => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          Me Contacter
+    <section
+      id="contact"
+      style={{ background: 'var(--color-bg)', borderTop: '1px solid var(--color-border)' }}
+      className="py-24 px-6 md:px-16 lg:px-24"
+    >
+      {/* Header */}
+      <div style={{ marginBottom: '4rem' }}>
+        <span style={{
+          fontFamily: 'var(--font-mono)',
+          color: 'var(--color-text-muted)',
+          fontSize: '0.75rem',
+          letterSpacing: '0.1em',
+          display: 'block',
+          marginBottom: '0.75rem'
+        }}>
+          06 —
+        </span>
+        <h2 style={{
+          fontFamily: 'var(--font-display)',
+          color: 'var(--color-text)',
+          fontSize: 'clamp(2rem, 4vw, 3rem)',
+          fontWeight: 300,
+          letterSpacing: '-0.02em',
+          marginBottom: '0.5rem'
+        }}>
+          {t('contact.title')}
         </h2>
+        <p style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
+          {t('contact.subtitle')}
+        </p>
+      </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Formulaire de contact */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Envoyez-moi un message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-6xl">
+        {/* Form */}
+        <div className="lg:col-span-2">
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Nom
+                <label htmlFor="name" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--color-text-muted)', letterSpacing: '0.08em', display: 'block', marginBottom: '0.4rem' }}>
+                  {t('contact.name').toUpperCase()}
                 </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                />
+                <input type="text" id="name" value={formData.name} onChange={handleChange} required className="input" />
               </div>
-              
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Email
+                <label htmlFor="email" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--color-text-muted)', letterSpacing: '0.08em', display: 'block', marginBottom: '0.4rem' }}>
+                  {t('contact.email').toUpperCase()}
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                />
+                <input type="email" id="email" value={formData.email} onChange={handleChange} required className="input" />
               </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
-                ></textarea>
-              </div>
+            </div>
 
+            <div>
+              <label htmlFor="message" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--color-text-muted)', letterSpacing: '0.08em', display: 'block', marginBottom: '0.4rem' }}>
+                {t('contact.message').toUpperCase()}
+              </label>
+              <textarea id="message" value={formData.message} onChange={handleChange} required rows={6} className="input" style={{ resize: 'vertical' }} />
+            </div>
+
+            <div>
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium py-2 px-4 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+                className="btn-primary"
+                style={{ opacity: status === 'sending' ? 0.6 : 1, cursor: status === 'sending' ? 'not-allowed' : 'pointer' }}
               >
-                {status === 'sending' ? 'Envoi en cours...' : 'Envoyer'}
+                {status === 'sending' ? t('contact.sending') : t('contact.send')}
               </button>
-
-              {status === 'success' && (
-                <p className="text-green-600 dark:text-green-400 text-center">Message envoyé avec succès!</p>
-              )}
-              {status === 'error' && (
-                <p className="text-red-600 dark:text-red-400 text-center">Une erreur est survenue. Veuillez réessayer.</p>
-              )}
-            </form>
-          </div>
-
-          {/* Photo de contact */}
-          <div className="bg-white dark:bg-gray-800 p-0 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-            <img 
-              src="Images/photo_contact.jpg" 
-              alt="Abdoul Ahad Mbacké Diouf" 
-              className="w-full h-full object-cover min-h-[400px] transform hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          {/* Informations de contact */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Informations de contact</h3>
-            
-            <div className="space-y-6">
-              <ContactItem
-                icon={<Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />}
-                title="Email"
-                content="aad.mbacke691@gmail.com"
-                href="mailto:aad.mbacke691@gmail.com"
-              />
-              
-              <ContactItem
-                icon={<Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />}
-                title="Téléphone"
-                content="+33 7 49 05 18 79"
-                href="tel:+33749051879"
-              />
-              
-              <ContactItem
-                icon={<MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />}
-                title="Localisation"
-                content="Saint-Etienne-Du-Rouvray, France"
-                href="https://www.google.com/maps/place/76800+Saint-%C3%89tienne-du-Rouvray,+France/@49.4013507,1.0692001,2158m/data=!3m1!1e3!4m6!3m5!1s0x47e0df735c487bf1:0x3ffa0ba61519ded0!8m2!3d49.380305!4d1.108209!16zL20vMGQ1MTYy?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
-              />
             </div>
 
-            <div className="mt-8">
-              <h4 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Réseaux sociaux</h4>
-              <div className="flex space-x-4">
-                <SocialLink
-                  href="https://maadec.vercel.app/"
-                  icon={<Briefcase className="w-6 h-6" />}
-                  label="MAADEC"
-                />
-                <SocialLink
-                  href="https://github.com/AbdoulDiouf2"
-                  icon={<Github className="w-6 h-6" />}
-                  label="GitHub"
-                />
-                <SocialLink
-                  href="https://www.linkedin.com/in/abdoul-ahad-mback%C3%A9-diouf-5b04b4213/"
-                  icon={<Linkedin className="w-6 h-6" />}
-                  label="LinkedIn"
-                />
-              </div>
+            {status === 'success' && (
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--color-accent-gold)' }}>
+                {t('contact.success')}
+              </p>
+            )}
+            {status === 'error' && (
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#e05a5a' }}>
+                {t('contact.error')}
+              </p>
+            )}
+          </form>
+        </div>
+
+        {/* Info column */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <ContactRow icon={<Mail size={15} />} label="Email" value="aad.mbacke691@gmail.com" href="mailto:aad.mbacke691@gmail.com" />
+          <ContactRow icon={<Phone size={15} />} label="Téléphone" value="+33 7 49 05 18 79" href="tel:+33749051879" />
+          <ContactRow
+            icon={<MapPin size={15} />}
+            label="Localisation"
+            value="Gif-sur-Yvette, France"
+          />
+
+          {/* Social links */}
+          <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--color-border)' }}>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              {[
+                { href: 'https://maadec.vercel.app/', icon: <Briefcase size={18} />, label: 'MAADEC' },
+                { href: 'https://github.com/AbdoulDiouf2', icon: <Github size={18} />, label: 'GitHub' },
+                { href: 'https://www.linkedin.com/in/abdoul-ahad-mback%C3%A9-diouf-5b04b4213/', icon: <Linkedin size={18} />, label: 'LinkedIn' },
+              ].map(s => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  style={{
+                    color: 'var(--color-text-muted)',
+                    transition: 'color 0.2s',
+                    display: 'flex',
+                    padding: '8px',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: '4px'
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
+                >
+                  {s.icon}
+                </a>
+              ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>
   );
 }
 
-const ContactItem = ({ 
-  icon, 
-  title, 
-  content, 
-  href 
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  content: string; 
-  href?: string;
-}) => {
-  const ContentWrapper = href ? 'a' : 'div';
-  const props = href ? { href, target: "_blank", rel: "noopener noreferrer" } : {};
-
+function ContactRow({ icon, label, value, href }: { icon: React.ReactNode; label: string; value: string; href?: string }) {
   return (
-    <div className="flex items-start gap-4">
-      <div className="flex-shrink-0 mt-1">
-        {icon}
+    <div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.3rem' }}>
+        <span style={{ color: 'var(--color-text-muted)' }}>{icon}</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--color-text-muted)', letterSpacing: '0.08em' }}>
+          {label.toUpperCase()}
+        </span>
       </div>
-      <div>
-        <h4 className="font-medium text-gray-800 dark:text-gray-200">{title}</h4>
-        <ContentWrapper 
-          {...props} 
-          className={`text-gray-600 dark:text-gray-300 mt-1 ${href ? 'hover:text-blue-500 dark:hover:text-blue-400 transition-colors' : ''}`}
+      {href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '0.875rem',
+          color: 'var(--color-text)',
+          textDecoration: 'none',
+          transition: 'color 0.2s'
+        }}
+          onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+          onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text)')}
         >
-          {content}
-        </ContentWrapper>
-      </div>
+          {value}
+        </a>
+      ) : (
+        <span style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: 'var(--color-text)' }}>{value}</span>
+      )}
     </div>
   );
 }
-
-const SocialLink = ({ 
-  href, 
-  icon, 
-  label 
-}: { 
-  href: string; 
-  icon: React.ReactNode; 
-  label: string;
-}) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="p-3 bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-600 transition-colors duration-300"
-    aria-label={label}
-  >
-    {icon}
-  </a>
-);

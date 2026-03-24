@@ -1,95 +1,156 @@
 import React from 'react';
 import { Menu, X, Github, Linkedin, Mail, Phone, Briefcase } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n';
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const { t } = useTranslation();
 
   const navLinks = [
-    { label: 'Accueil', href: '#home' },
-    { label: 'À Propos', href: '#about' },
-    { label: 'Compétences', href: '#skills' },
-    { label: 'Expérience', href: '#experience' },
-    { label: 'Contact', href: '#contact' }
+    { key: 'nav.home', href: '#home' },
+    { key: 'nav.about', href: '#about' },
+    { key: 'nav.skills', href: '#skills' },
+    { key: 'nav.experience', href: '#experience' },
+    { key: 'nav.projects', href: '#projects' },
+    { key: 'nav.contact', href: '#contact' }
   ];
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  
-  // Fonction pour assurer un défilement doux vers les sections
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    
-    // Enlever le # pour obtenir l'ID
     const id = targetId.replace('#', '');
-    const targetElement = document.getElementById(id);
-    
-    if (targetElement) {
-      // Fermer le menu mobile si ouvert
-      if (isOpen) {
-        setIsOpen(false);
-      }
-      
-      // Scroller doucement vers l'élément
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth'
-      });
+    const el = document.getElementById(id);
+    if (el) {
+      if (isOpen) setIsOpen(false);
+      window.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
     }
   };
 
+  const toggleLang = () => {
+    const next = i18n.language === 'fr' ? 'en' : 'fr';
+    i18n.changeLanguage(next);
+    localStorage.setItem('lang', next);
+  };
+
+  const lang = i18n.language === 'fr' ? 'fr' : 'en';
+
   return (
-    <header className="fixed w-full top-0 z-50 transition-colors duration-300 dark:bg-gray-900 bg-white/80 backdrop-blur-sm">
-      <nav className="container mx-auto px-4 py-4">
+    <header
+      style={{ background: 'var(--color-bg)', borderBottom: '1px solid var(--color-border)' }}
+      className="fixed w-full top-0 z-50"
+    >
+      <nav className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <a 
-            href="#home" 
+          {/* Logo */}
+          <a
+            href="#home"
             onClick={(e) => handleSmoothScroll(e, '#home')}
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            style={{
+              fontFamily: 'var(--font-display)',
+              color: 'var(--color-text)',
+              fontSize: '1.25rem',
+              fontWeight: 400,
+              textDecoration: 'none',
+              letterSpacing: '0.05em'
+            }}
           >
             AAMD
           </a>
-          
-          <div className="hidden md:flex items-center">
-            <div className="flex space-x-8">
+
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-8">
+            <div className="flex gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    color: 'var(--color-text-muted)',
+                    fontSize: '0.875rem',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s'
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text)')}
+                  onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
                 >
-                  {link.label}
+                  {t(link.key)}
                 </a>
               ))}
             </div>
-            <div className="ml-8">
-              <SocialLinks />
-            </div>
+
+            {/* Lang toggle */}
+            <button
+              onClick={toggleLang}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.75rem',
+                letterSpacing: '0.05em',
+                padding: '2px 0'
+              }}
+              aria-label="Toggle language"
+            >
+              <span style={{ color: lang === 'fr' ? 'var(--color-accent-gold)' : 'var(--color-text-muted)' }}>FR</span>
+              <span style={{ color: 'var(--color-border)', margin: '0 4px' }}>/</span>
+              <span style={{ color: lang === 'en' ? 'var(--color-accent-gold)' : 'var(--color-text-muted)' }}>EN</span>
+            </button>
+
+            <SocialLinks />
           </div>
 
+          {/* Mobile hamburger */}
           <button
-            onClick={toggleMenu}
-            className="md:hidden text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+            onClick={() => setIsOpen(!isOpen)}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-muted)' }}
+            className="md:hidden"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
-        {/* Menu mobile */}
+        {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden mt-4">
-            <div className="flex flex-col space-y-4 bg-white dark:bg-gray-800 rounded-lg p-4">
+          <div
+            style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '4px' }}
+            className="md:hidden mt-4 p-4"
+          >
+            <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    color: 'var(--color-text-muted)',
+                    fontSize: '0.9rem',
+                    textDecoration: 'none'
+                  }}
                 >
-                  {link.label}
+                  {t(link.key)}
                 </a>
               ))}
-              <div className="flex justify-center space-x-4 pt-4">
+              <div className="flex items-center justify-between pt-2" style={{ borderTop: '1px solid var(--color-border)' }}>
                 <SocialLinks />
+                <button
+                  onClick={toggleLang}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.75rem'
+                  }}
+                >
+                  <span style={{ color: lang === 'fr' ? 'var(--color-accent-gold)' : 'var(--color-text-muted)' }}>FR</span>
+                  <span style={{ color: 'var(--color-border)', margin: '0 4px' }}>/</span>
+                  <span style={{ color: lang === 'en' ? 'var(--color-accent-gold)' : 'var(--color-text-muted)' }}>EN</span>
+                </button>
               </div>
             </div>
           </div>
@@ -100,21 +161,41 @@ export default function Header() {
 }
 
 const SocialLinks = () => (
-  <div className="flex items-center space-x-4">
-    <a href="https://maadec.vercel.app/" target="_blank" rel="noopener noreferrer" title="MAADEC" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
-      <Briefcase size={20} />
+  <div className="flex items-center gap-4">
+    <a href="https://maadec.vercel.app/" target="_blank" rel="noopener noreferrer" title="MAADEC"
+      style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }}
+      onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-accent-gold)')}
+      onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
+    >
+      <Briefcase size={18} />
     </a>
-    <a href="https://github.com/AbdoulDiouf2" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
-      <Github size={20} />
+    <a href="https://github.com/AbdoulDiouf2" target="_blank" rel="noopener noreferrer"
+      style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }}
+      onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text)')}
+      onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
+    >
+      <Github size={18} />
     </a>
-    <a href="https://www.linkedin.com/in/abdoul-ahad-mback%C3%A9-diouf-5b04b4213/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
-      <Linkedin size={20} />
+    <a href="https://www.linkedin.com/in/abdoul-ahad-mback%C3%A9-diouf-5b04b4213/" target="_blank" rel="noopener noreferrer"
+      style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }}
+      onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text)')}
+      onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
+    >
+      <Linkedin size={18} />
     </a>
-    <a href="mailto:aad.mbacke691@gmail.com" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
-      <Mail size={20} />
+    <a href="mailto:aad.mbacke691@gmail.com"
+      style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }}
+      onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text)')}
+      onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
+    >
+      <Mail size={18} />
     </a>
-    <a href="tel:+33749051879" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300">
-      <Phone size={20} />
+    <a href="tel:+33749051879"
+      style={{ color: 'var(--color-text-muted)', transition: 'color 0.2s' }}
+      onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-text)')}
+      onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-text-muted)')}
+    >
+      <Phone size={18} />
     </a>
   </div>
 );

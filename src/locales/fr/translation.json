@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "education": "Projets académiques",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "index": "01 —",
+    "accroche": "Consultant IT · Fondateur MAADEC · Backend, Big Data & Infrastructure",
+    "cta": "Voir mes projets"
+  },
+  "about": {
+    "title": "À propos",
+    "journey_title": "Parcours géographique",
+    "philosophy_title": "Philosophie",
+    "interests_title": "Centres d'intérêt",
+    "education_title": "Formation",
+    "profile_title": "Profil",
+    "download_cv": "Télécharger le CV",
+    "cv_updated": "CV mis à jour le 10/10/2025",
+    "phases": {
+      "initial": "Formation initiale",
+      "engineering": "Ingénierie Big Data",
+      "master": "Mastère IA"
+    },
+    "values": {
+      "innovation": "Innovation",
+      "innovation_desc": "Toujours chercher des solutions créatives aux défis complexes",
+      "sustainability": "Durabilité",
+      "sustainability_desc": "Développer des solutions tech respectueuses de l'environnement",
+      "collaboration": "Collaboration",
+      "collaboration_desc": "Croire en la force du travail d'équipe et du partage de connaissances",
+      "excellence": "Excellence",
+      "excellence_desc": "Viser la qualité dans chaque projet et chaque ligne de code"
+    },
+    "interests": {
+      "data_ai": "Data & Intelligence Artificielle",
+      "tech": "Technologies Innovantes",
+      "web": "Développement Web",
+      "gis": "SIG & Géomatique",
+      "sports": "Sports & Loisirs",
+      "opensource": "Culture Open Source"
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "subtitle": "Stack technique & outils",
+    "filter_all": "Tout",
+    "filter_programming": "Programmation",
+    "filter_data": "Big Data",
+    "filter_dev": "Développement",
+    "filter_tools": "Outils",
+    "level_beginner": "Débutant",
+    "level_intermediate": "Intermédiaire",
+    "level_advanced": "Avancé",
+    "level_expert": "Expert",
+    "qualities_title": "Qualités personnelles"
+  },
+  "experience": {
+    "title": "Expérience",
+    "filter_all": "Tout",
+    "filter_work": "Stages",
+    "filter_projects": "Projets",
+    "filter_education": "Formation",
+    "filter_freelance": "Freelance",
+    "see_details": "Voir les détails",
+    "close": "Fermer"
+  },
+  "education": {
+    "title": "Projets académiques"
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Case studies & réalisations",
+    "in_progress": "En cours",
+    "anonymous_client": "Client anonyme",
+    "github_soon": "GitHub à venir",
+    "see_github": "Voir sur GitHub",
+    "see_demo": "Voir la démo"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Travaillons ensemble",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès.",
+    "error": "Erreur lors de l'envoi. Réessayez.",
+    "location": "Saint-Etienne-Du-Rouvray, France",
+    "see_map": "Voir sur Maps"
+  },
+  "cta": {
+    "title": "Vous avez un projet ?",
+    "subtitle": "Discutons-en. Je suis disponible pour des missions freelance en développement backend, infrastructure, Big Data et ingénierie des données.",
+    "button": "Me contacter"
+  },
+  "chatbot": {
+    "title": "Assistant",
+    "subtitle": "En ligne",
+    "placeholder": "Posez une question...",
+    "greeting": "Bonjour ! Je suis l'assistant d'Abdoul Ahad. Comment puis-je vous aider ?",
+    "fallback": "Je n'ai pas compris votre question. Vous pouvez me demander des informations sur la formation, l'expérience, les compétences ou les projets d'Abdoul Ahad."
+  }
+}
