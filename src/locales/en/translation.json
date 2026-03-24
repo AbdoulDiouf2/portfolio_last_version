@@ -11,7 +11,12 @@
   "hero": {
     "index": "01 —",
     "accroche": "IT Consultant · MAADEC Founder · Data Engineering, Backend & Cloud",
-    "cta": "See my projects"
+    "cta": "See my projects",
+    "stats": [
+      { "value": "3", "label": "years of experience" },
+      { "value": "10+", "label": "projects completed" },
+      { "value": "2", "label": "countries" }
+    ]
   },
   "about": {
     "title": "About",

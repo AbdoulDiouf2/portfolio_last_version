@@ -20,7 +20,7 @@ export default function Hero() {
     <section
       id="home"
       style={{ background: 'var(--color-bg)' }}
-      className="min-h-screen flex items-center px-6 md:px-16 lg:px-24"
+      className="min-h-screen flex items-center px-6 md:px-16 lg:px-24 pt-14"
     >
       <div className="max-w-3xl">
         <motion.div
@@ -85,6 +85,41 @@ export default function Hero() {
             <a href="#projects" className="btn-primary">
               {t('hero.cta')}
             </a>
+          </motion.div>
+
+          <motion.div
+            variants={lineVariants}
+            style={{
+              display: 'flex',
+              gap: '2.5rem',
+              marginTop: '3rem',
+              paddingTop: '2rem',
+              borderTop: '1px solid var(--color-border)',
+            }}
+          >
+            {(t('hero.stats', { returnObjects: true }) as { value: string; label: string }[]).map((stat) => (
+              <div key={stat.label}>
+                <div style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
+                  fontWeight: 300,
+                  color: 'var(--color-accent-gold)',
+                  lineHeight: 1,
+                  marginBottom: '0.3rem',
+                }}>
+                  {stat.value}
+                </div>
+                <div style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.7rem',
+                  color: 'var(--color-text-muted)',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                }}>
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </div>
