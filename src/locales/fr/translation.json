@@ -84,7 +84,15 @@
     "anonymous_client": "Client anonyme",
     "github_soon": "GitHub à venir",
     "see_github": "Voir sur GitHub",
-    "see_demo": "Voir la démo"
+    "see_demo": "Voir la démo",
+    "details": {
+      "open": "Voir la fiche",
+      "problem": "LE PROBLÈME",
+      "built": "CE QUE J'AI CONSTRUIT",
+      "architecture": "ARCHITECTURE",
+      "metrics": "EN CHIFFRES",
+      "data_angle": "ANGLE DATA ENGINEERING"
+    }
   },
   "contact": {
     "title": "Contact",
