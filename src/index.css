@@ -159,3 +159,16 @@
   transition: opacity 300ms ease-out, transform 300ms ease-out;
 }
 
+
+/* Lignes de projets cliquables (section Projets) */
+.project-row:hover .project-row-title,
+.project-row:focus-visible .project-row-title,
+.project-row:hover .project-row-cta,
+.project-row:focus-visible .project-row-cta {
+  color: var(--color-accent-gold) !important;
+}
+
+.project-row:focus-visible {
+  outline: 1px solid var(--color-accent-gold);
+  outline-offset: 4px;
+}
