@@ -151,7 +151,7 @@ export const missions: Mission[] = [
     number: '03',
     id: 'jamora',
     title: 'Jamora — Logiciel de gestion d’officine',
-    context: { fr: 'Startup Bastion-AZ (Sénégal) — co-développé en binôme', en: 'Bastion-AZ startup (Senegal) — co-built by a two-developer team' },
+    context: { fr: 'Co-fondateur technique — startup Bastion-AZ (Sénégal)', en: 'Technical co-founder — Bastion-AZ startup (Senegal)' },
     pitch: {
       fr: 'SaaS de gestion d’officine : stock par lots, caisse, tiers-payant, commandes grossistes et finances, avec une base isolée par pharmacie.',
       en: 'Pharmacy management SaaS: batch-level stock, POS, insurance billing, wholesaler orders and finances, with one isolated database per pharmacy.',
