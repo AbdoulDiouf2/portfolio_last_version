@@ -433,8 +433,8 @@ export const missions: Mission[] = [
       ],
     },
     architecture: {
-      fr: "SPA React 18 + TypeScript (Vite, Tailwind, Ant Design) sur Firebase : Auth, Firestore, Cloud Messaging et Cloud Functions v2 (planification, suppression de compte, intégrations externes). Les fichiers sont dans Cloudflare R2, exposé par un Worker authentifié ; le front est publié sur GitHub Pages.",
-      en: 'React 18 + TypeScript SPA (Vite, Tailwind, Ant Design) on Firebase: Auth, Firestore, Cloud Messaging and Cloud Functions v2 (scheduling, account deletion, external integrations). Files live in Cloudflare R2, exposed through an authenticated Worker; the frontend is published on GitHub Pages.',
+      fr: "SPA React 18 + TypeScript (Vite, Tailwind, Ant Design) sur Firebase : Auth, Firestore, Cloud Messaging et Cloud Functions v2 (planification, suppression de compte, intégrations externes). Les fichiers sont dans Cloudflare R2, exposé par un Worker authentifié ; le front est déployé sur Vercel.",
+      en: 'React 18 + TypeScript SPA (Vite, Tailwind, Ant Design) on Firebase: Auth, Firestore, Cloud Messaging and Cloud Functions v2 (scheduling, account deletion, external integrations). Files live in Cloudflare R2, exposed through an authenticated Worker; the frontend is deployed on Vercel.',
     },
     stack: ['React', 'TypeScript', 'Firebase', 'Cloud Functions', 'Cloudflare Workers', 'Cloudflare R2', 'Tailwind CSS'],
     metrics: [
@@ -450,7 +450,7 @@ export const missions: Mission[] = [
     status: { fr: 'En production — maintenu bénévolement.', en: 'In production — maintained on a volunteer basis.' },
     period: '2025 →',
     links: [
-      { label: 'Application', href: 'https://abdouldiouf2.github.io/Esig-prep-guide/' },
+      { label: 'esig-prep-guide.vercel.app', href: 'https://esig-prep-guide.vercel.app/' },
       { label: 'GitHub', href: 'https://github.com/AbdoulDiouf2/esig-prep-guide' },
     ],
   },
