@@ -149,6 +149,57 @@ export const missions: Mission[] = [
   {
     kind: 'mission',
     number: '03',
+    id: 'jamora',
+    title: 'Jamora — Logiciel de gestion d’officine',
+    context: { fr: 'Startup Bastion-AZ (Sénégal) — co-développé en binôme', en: 'Bastion-AZ startup (Senegal) — co-built by a two-developer team' },
+    pitch: {
+      fr: 'SaaS de gestion d’officine : stock par lots, caisse, tiers-payant, commandes grossistes et finances, avec une base isolée par pharmacie.',
+      en: 'Pharmacy management SaaS: batch-level stock, POS, insurance billing, wholesaler orders and finances, with one isolated database per pharmacy.',
+    },
+    problem: {
+      fr: "Au Sénégal, les officines indépendantes travaillent avec des logiciels anciens installés sur un seul poste, ou sur papier : stock et péremptions mal suivis, crédits clients et créances des assurances difficiles à recouvrer, commandes passées à la main chez chaque grossiste. Jamora regroupe tout dans une application web, avec une isolation forte des données de santé et un mode qui continue de fonctionner quand la connexion coupe.",
+      en: 'In Senegal, independent pharmacies run on legacy single-workstation software or on paper: stock and expiry dates are poorly tracked, customer credit and insurer receivables are hard to collect, and orders are placed by hand with each wholesaler. Jamora brings it all into one web app, with strong isolation of health data and a mode that keeps working when the connection drops.',
+    },
+    features: {
+      fr: [
+        'Architecture multi-tenant avec un schéma PostgreSQL par pharmacie (django-tenants), pharmacie identifiée par le sous-domaine et référentiel national de médicaments partagé.',
+        'RBAC fin : 7 rôles et un moteur de permissions à 3 niveaux (exception utilisateur, droits du rôle, valeurs par défaut) sur une cinquantaine de pages et d’actions.',
+        'Caisse avec scanner code-barres, vente à crédit, tiers-payant avec bordereaux et recouvrement, devis, avoirs ; mode hors ligne en PWA avec file d’opérations synchronisée au retour du réseau.',
+        'Stock par lots avec dates de péremption, inventaires, alertes et relances via 14 tâches Celery planifiées, notifications WhatsApp.',
+        'Commandes vers 4 grossistes sénégalais et pipeline de migration qui reprend l’historique de l’ancien logiciel des officines.',
+        'Agent d’impression Windows en Go : factures A4 et tickets de caisse imprimés sans boîte de dialogue.',
+      ],
+      en: [
+        'Multi-tenant architecture with one PostgreSQL schema per pharmacy (django-tenants), pharmacy identified by subdomain and a shared national drug catalogue.',
+        'Fine-grained RBAC: 7 roles and a 3-level permission engine (user exception, role rights, defaults) over about fifty pages and actions.',
+        'POS with barcode scanning, credit sales, insurance billing with claim batches and collections, quotes, credit notes; offline PWA mode with an operation queue synced when the network returns.',
+        'Batch-level stock with expiry dates, inventories, alerts and reminders through 14 scheduled Celery tasks, WhatsApp notifications.',
+        'Orders to 4 Senegalese wholesalers and a migration pipeline that brings over the history from the pharmacies’ legacy software.',
+        'Windows print agent in Go: A4 invoices and POS receipts printed with no print dialog.',
+      ],
+    },
+    architecture: {
+      fr: "Monorepo : API Django 5 + DRF (22 apps métier) en multi-tenant schema-per-tenant sur PostgreSQL, workers Celery et Celery Beat sur Redis, et une SPA React 18 / TypeScript / Vite installable en PWA. En production, Docker Compose tourne sur un VPS derrière Nginx et Cloudflare, avec déploiement automatique par GitHub Actions et supervision Sentry, Prometheus et Grafana.",
+      en: 'Monorepo: a Django 5 + DRF API (22 domain apps), multi-tenant with one schema per tenant on PostgreSQL, Celery workers and Celery Beat on Redis, and a React 18 / TypeScript / Vite SPA installable as a PWA. In production, Docker Compose runs on a VPS behind Nginx and Cloudflare, with automatic deployment via GitHub Actions and monitoring with Sentry, Prometheus and Grafana.',
+    },
+    stack: ['Python', 'Django', 'django-tenants', 'PostgreSQL', 'Celery', 'Redis', 'React', 'TypeScript', 'Docker', 'Go'],
+    metrics: [
+      { value: '22', label: { fr: 'apps Django métier', en: 'Django domain apps' } },
+      { value: '~4 200', label: { fr: 'tests pytest', en: 'pytest tests' } },
+      { value: '83', label: { fr: 'pages React', en: 'React pages' } },
+      { value: '14', label: { fr: 'tâches planifiées', en: 'scheduled jobs' } },
+    ],
+    dataAngle: {
+      fr: 'Pipeline de migration (API + Celery, idempotent, avec réconciliation des ventes et des lots) qui reprend l’historique de l’ancien logiciel dans chaque schéma de pharmacie, sur un modèle de données isolé par tenant avec un référentiel partagé.',
+      en: 'Migration pipeline (API + Celery, idempotent, with sales and batch reconciliation) that loads the legacy software’s history into each pharmacy schema, on a per-tenant data model with a shared reference catalogue.',
+    },
+    status: { fr: 'En production chez des pharmacies pilotes — développement actif.', en: 'Live with pilot pharmacies — under active development.' },
+    period: '2026 →',
+    links: [{ label: 'jamora.sn', href: 'https://www.jamora.sn' }],
+  },
+  {
+    kind: 'mission',
+    number: '04',
     id: 'jobtracker',
     title: 'JobTracker',
     context: { fr: 'Projet personnel — SaaS en production', en: 'Personal project — SaaS in production' },
@@ -203,7 +254,7 @@ export const missions: Mission[] = [
   },
   {
     kind: 'mission',
-    number: '04',
+    number: '05',
     id: 'jangat',
     title: 'Jàngat — Analyse des Q&R de la DG',
     context: { fr: 'Stage Data Engineer — Sonatel, co-développé en binôme', en: 'Data Engineer internship — Sonatel, co-built in a pair' },
@@ -251,7 +302,7 @@ export const missions: Mission[] = [
   },
   {
     kind: 'mission',
-    number: '05',
+    number: '06',
     id: 'maad-sphere',
     title: 'MAAD Sphere',
     context: { fr: 'Projet fondateur — SaaS de gestion d’activité (MAADEC)', en: 'Founder project — business-management SaaS (MAADEC)' },
@@ -302,7 +353,7 @@ export const missions: Mission[] = [
   },
   {
     kind: 'mission',
-    number: '06',
+    number: '07',
     id: 'touba-aviation',
     title: 'Touba Aviation & Tours',
     context: { fr: 'Mission freelance — agence de voyages (Sénégal)', en: 'Freelance mission — travel agency (Senegal)' },
@@ -352,7 +403,7 @@ export const missions: Mission[] = [
   },
   {
     kind: 'mission',
-    number: '07',
+    number: '08',
     id: 'cps-connect',
     title: 'CPS Connect',
     context: { fr: 'Projet associatif — réseau CPS Dakar × ESIGELEC', en: 'Community project — CPS Dakar × ESIGELEC network' },
@@ -401,23 +452,6 @@ export const missions: Mission[] = [
       { label: 'Application', href: 'https://abdouldiouf2.github.io/Esig-prep-guide/' },
       { label: 'GitHub', href: 'https://github.com/AbdoulDiouf2/esig-prep-guide' },
     ],
-  },
-  {
-    // Pas de dépôt analysé : ligne affichée sans fiche détaillée.
-    kind: 'mission',
-    number: '08',
-    id: 'pilltrack',
-    title: 'PillTrack',
-    context: { fr: 'Projet personnel — pharmacie', en: 'Personal project — pharmacy' },
-    pitch: {
-      fr: 'Gestion des stocks de médicaments et alertes de péremption en temps réel dans les officines.',
-      en: 'Medication stock management and real-time expiry alerts in pharmacies.',
-    },
-    problem: { fr: '', en: '' },
-    features: { fr: [], en: [] },
-    architecture: { fr: '', en: '' },
-    stack: ['Python', 'Flask', 'PostgreSQL', 'Docker', 'Chart.js'],
-    status: { fr: 'En développement actif.', en: 'Actively in development.' },
   },
 ];
 
