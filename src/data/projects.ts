@@ -400,6 +400,7 @@ export const missions: Mission[] = [
     },
     status: { fr: 'En production.', en: 'In production.' },
     period: '2025 – 2026',
+    links: [{ label: 'touba-aviation-group.com', href: 'https://touba-aviation-group.com' }],
   },
   {
     kind: 'mission',
